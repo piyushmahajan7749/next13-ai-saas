@@ -3,7 +3,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { Montserrat } from 'next/font/google'
-import { Code, ImageIcon, LayoutDashboard, MessageSquare, Music, Settings, VideoIcon } from "lucide-react";
+import { Code, ImageIcon, LayoutDashboard, Users, TestTube2Icon, Settings, BarChart2 } from "lucide-react";
 import { usePathname } from "next/navigation";
 
 import { cn } from "@/lib/utils";
@@ -19,34 +19,22 @@ const routes = [
     color: "text-sky-500"
   },
   {
-    label: 'Conversation',
-    icon: MessageSquare,
-    href: '/conversation',
+    label: 'Create Audience',
+    icon: Users,
+    href: '/audience',
     color: "text-violet-500",
   },
   {
-    label: 'Image Generation',
-    icon: ImageIcon,
+    label: 'Start campaign',
+    icon: TestTube2Icon,
     color: "text-pink-700",
-    href: '/image',
+    href: '/campaign',
   },
   {
-    label: 'Video Generation',
-    icon: VideoIcon,
+    label: 'Leads',
+    icon: BarChart2,
     color: "text-orange-700",
-    href: '/video',
-  },
-  {
-    label: 'Music Generation',
-    icon: Music,
-    color: "text-emerald-500",
-    href: '/music',
-  },
-  {
-    label: 'Code Generation',
-    icon: Code,
-    color: "text-green-700",
-    href: '/code',
+    href: '/leads',
   },
   {
     label: 'Settings',
@@ -72,7 +60,7 @@ export const Sidebar = ({
             <Image fill alt="Logo" src="/logo.png" />
           </div>
           <h1 className={cn("text-2xl font-bold", poppins.className)}>
-            Genius
+          Autoset.ai
           </h1>
         </Link>
         <div className="space-y-1">

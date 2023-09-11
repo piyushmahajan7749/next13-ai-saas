@@ -6,8 +6,8 @@ import { useState } from "react";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 import { toast } from "react-hot-toast";
-import { FileAudio } from "lucide-react";
 import { useRouter } from "next/navigation";
+import { LucideBadgeDollarSign, Send } from "lucide-react";
 
 import { Heading } from "@/components/heading";
 import { Button } from "@/components/ui/button";
@@ -19,10 +19,10 @@ import { useProModal } from "@/hooks/use-pro-modal";
 
 import { formSchema } from "./constants";
 
-const VideoPage = () => {
-  const router = useRouter();
+const LeadsPage = () => {
   const proModal = useProModal();
-  const [video, setVideo] = useState<string>();
+  const router = useRouter();
+  const [music, setMusic] = useState<string>();
 
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
@@ -35,11 +35,12 @@ const VideoPage = () => {
 
   const onSubmit = async (values: z.infer<typeof formSchema>) => {
     try {
-      setVideo(undefined);
+      setMusic(undefined);
 
-      const response = await axios.post('/api/video', values);
+      const response = await axios.post('/api/music', values);
+      console.log(response)
 
-      setVideo(response.data[0]);
+      setMusic(response.data.audio);
       form.reset();
     } catch (error: any) {
       if (error?.response?.status === 403) {
@@ -55,11 +56,11 @@ const VideoPage = () => {
   return ( 
     <div>
       <Heading
-        title="Video Generation"
-        description="Turn your prompt into video."
-        icon={FileAudio}
-        iconColor="text-orange-700"
-        bgColor="bg-orange-700/10"
+        title="Leads"
+        description="Your generated leads from active and past campaigns"
+        icon={LucideBadgeDollarSign}
+        iconColor="text-emerald-500"
+        bgColor="bg-emerald-500/10"
       />
       <div className="px-4 lg:px-8">
         <Form {...form}>
@@ -86,7 +87,7 @@ const VideoPage = () => {
                     <Input
                       className="border-0 outline-none focus-visible:ring-0 focus-visible:ring-transparent"
                       disabled={isLoading} 
-                      placeholder="Clown fish swimming in a coral reef" 
+                      placeholder="My audience" 
                       {...field}
                     />
                   </FormControl>
@@ -94,7 +95,7 @@ const VideoPage = () => {
               )}
             />
             <Button className="col-span-12 lg:col-span-2 w-full" type="submit" disabled={isLoading} size="icon">
-              Generate
+              Create new
             </Button>
           </form>
         </Form>
@@ -103,17 +104,17 @@ const VideoPage = () => {
             <Loader />
           </div>
         )}
-        {!video && !isLoading && (
-          <Empty label="No video files generated." />
+        {!music && !isLoading && (
+          <Empty label="No audience created." />
         )}
-        {video && (
-          <video controls className="w-full aspect-video mt-8 rounded-lg border bg-black">
-            <source src={video} />
-          </video>
+        {music && (
+          <audio controls className="w-full mt-8">
+            <source src={music} />
+          </audio>
         )}
       </div>
     </div>
    );
 }
  
-export default VideoPage;
+export default LeadsPage;

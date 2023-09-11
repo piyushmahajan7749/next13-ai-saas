@@ -7,11 +7,15 @@ import { ModalProvider } from '@/components/modal-provider'
 import { CrispProvider } from '@/components/crisp-provider'
 
 import './globals.css'
+import '@radix-ui/themes/styles.css';
+import { Theme } from '@radix-ui/themes';
+
+
 
 const font = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
-  title: 'Genius',
+  title: 'Autoset.ai',
   description: 'AI Platform',
 }
 
@@ -23,11 +27,18 @@ export default async function RootLayout({
   return (
     <ClerkProvider>
       <html lang="en" suppressHydrationWarning>
-        <CrispProvider />
         <body className={font.className}>
-          <ToasterProvider />
-          <ModalProvider />
-          {children}
+          <Theme
+            accentColor="cyan"
+            grayColor="gray"
+            panelBackground="solid"
+            scaling="100%"
+            radius="full"
+           >
+            <ToasterProvider />
+            <ModalProvider />
+            {children}
+          </Theme>
         </body>
       </html>
     </ClerkProvider>

@@ -7,7 +7,7 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 import { toast } from "react-hot-toast";
 import { useRouter } from "next/navigation";
-import { Music, Send } from "lucide-react";
+import { Users, Send } from "lucide-react";
 
 import { Heading } from "@/components/heading";
 import { Button } from "@/components/ui/button";
@@ -19,7 +19,7 @@ import { useProModal } from "@/hooks/use-pro-modal";
 
 import { formSchema } from "./constants";
 
-const MusicPage = () => {
+const CampaignPage = () => {
   const proModal = useProModal();
   const router = useRouter();
   const [music, setMusic] = useState<string>();
@@ -56,9 +56,9 @@ const MusicPage = () => {
   return ( 
     <div>
       <Heading
-        title="Music Generation"
-        description="Turn your prompt into music."
-        icon={Music}
+        title="Campaigns"
+        description="Start lead generation campaigns"
+        icon={Users}
         iconColor="text-emerald-500"
         bgColor="bg-emerald-500/10"
       />
@@ -87,7 +87,7 @@ const MusicPage = () => {
                     <Input
                       className="border-0 outline-none focus-visible:ring-0 focus-visible:ring-transparent"
                       disabled={isLoading} 
-                      placeholder="Piano solo" 
+                      placeholder="Campaigns" 
                       {...field}
                     />
                   </FormControl>
@@ -95,7 +95,7 @@ const MusicPage = () => {
               )}
             />
             <Button className="col-span-12 lg:col-span-2 w-full" type="submit" disabled={isLoading} size="icon">
-              Generate
+              Start new
             </Button>
           </form>
         </Form>
@@ -105,7 +105,7 @@ const MusicPage = () => {
           </div>
         )}
         {!music && !isLoading && (
-          <Empty label="No music generated." />
+          <Empty label="No campaigns started." />
         )}
         {music && (
           <audio controls className="w-full mt-8">
@@ -117,4 +117,4 @@ const MusicPage = () => {
    );
 }
  
-export default MusicPage;
+export default CampaignPage;
