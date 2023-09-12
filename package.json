@@ -50,6 +50,7 @@
     "react-hook-form": "^7.45.1",
     "react-hot-toast": "^2.4.1",
     "react-markdown": "^8.0.7",
+    "react-multistep": "^5.5.9",
     "react-search-autocomplete": "^8.5.2",
     "replicate": "^0.12.3",
     "stripe": "^12.13.0",

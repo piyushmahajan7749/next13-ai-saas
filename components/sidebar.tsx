@@ -2,50 +2,60 @@
 
 import Link from "next/link";
 import Image from "next/image";
-import { Montserrat } from 'next/font/google'
-import { Code, ImageIcon, LayoutDashboard, Users, TestTube2Icon, Settings, BarChart2 } from "lucide-react";
+import { Montserrat } from "next/font/google";
+import {
+  Code,
+  ImageIcon,
+  LayoutDashboard,
+  Users,
+  TestTube2Icon,
+  Settings,
+  BarChart2,
+  MessageCircle,
+  Timer,
+} from "lucide-react";
 import { usePathname } from "next/navigation";
 
 import { cn } from "@/lib/utils";
 import { FreeCounter } from "@/components/free-counter";
 
-const poppins = Montserrat ({ weight: '600', subsets: ['latin'] });
+const poppins = Montserrat({ weight: "600", subsets: ["latin"] });
 
 const routes = [
   {
-    label: 'Dashboard',
+    label: "Dashboard",
     icon: LayoutDashboard,
-    href: '/dashboard',
-    color: "text-sky-500"
+    href: "/dashboard",
+    color: "text-sky-500",
   },
   {
-    label: 'Create Audience',
+    label: "Audiences",
     icon: Users,
-    href: '/audience',
+    href: "/audience",
     color: "text-violet-500",
   },
   {
-    label: 'Start campaign',
-    icon: TestTube2Icon,
+    label: "Automation",
+    icon: Timer,
     color: "text-pink-700",
-    href: '/campaign',
+    href: "/campaign",
   },
   {
-    label: 'Leads',
-    icon: BarChart2,
+    label: "Messages",
+    icon: MessageCircle,
     color: "text-orange-700",
-    href: '/leads',
+    href: "/leads",
   },
   {
-    label: 'Settings',
+    label: "Settings",
     icon: Settings,
-    href: '/settings',
+    href: "/settings",
   },
 ];
 
 export const Sidebar = ({
   apiLimitCount = 0,
-  isPro = false
+  isPro = false,
 }: {
   apiLimitCount: number;
   isPro: boolean;
@@ -60,17 +70,19 @@ export const Sidebar = ({
             <Image fill alt="Logo" src="/logo.png" />
           </div>
           <h1 className={cn("text-2xl font-bold", poppins.className)}>
-          Autoset.ai
+            Autoset.ai
           </h1>
         </Link>
         <div className="space-y-1">
           {routes.map((route) => (
             <Link
-              key={route.href} 
+              key={route.href}
               href={route.href}
               className={cn(
                 "text-sm group flex p-3 w-full justify-start font-medium cursor-pointer hover:text-white hover:bg-white/10 rounded-lg transition",
-                pathname === route.href ? "text-white bg-white/10" : "text-zinc-400",
+                pathname === route.href
+                  ? "text-white bg-white/10"
+                  : "text-zinc-400"
               )}
             >
               <div className="flex items-center flex-1">
@@ -81,10 +93,7 @@ export const Sidebar = ({
           ))}
         </div>
       </div>
-      <FreeCounter 
-        apiLimitCount={apiLimitCount} 
-        isPro={isPro}
-      />
+      <FreeCounter apiLimitCount={apiLimitCount} isPro={isPro} />
     </div>
   );
 };

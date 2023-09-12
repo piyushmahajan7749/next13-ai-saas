@@ -3,7 +3,8 @@
 import { useState } from "react";
 import { toast } from "react-hot-toast";
 import { useRouter } from "next/navigation";
-import { Users } from "lucide-react";
+import { Car, Users } from "lucide-react";
+import MultiStep from "react-multistep";
 
 import { Heading } from "@/components/heading";
 import { useProModal } from "@/hooks/use-pro-modal";
@@ -19,6 +20,18 @@ import {
   Text,
   TextField,
 } from "@radix-ui/themes";
+import StepOne from "./addsource";
+import StepTwo from "./steptwo";
+import AddSource from "./addsource";
+import ApplyFilter from "./applyfilter";
+import PreviewSource from "./preview";
+
+const steps = [
+  { title: "StepOne", component: <StepOne /> },
+  { title: "StepTwo", component: <StepTwo /> },
+  { title: "StepThree", component: <StepOne /> },
+  { title: "StepFour", component: <StepOne /> },
+];
 
 const AudiencePage = () => {
   const proModal = useProModal();
@@ -26,11 +39,17 @@ const AudiencePage = () => {
 
   const [tweetUrl, setTweetUrl] = useState("");
 
+  const [step, setStep] = useState(0);
+
   const handleTweetUrlChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>
   ) => {
     const { value } = e.target;
     setTweetUrl(value);
+  };
+
+  const handleNextClick = () => {
+    setStep(step + 1);
   };
 
   const handleSubmit = async (e: React.FormEvent) => {
@@ -47,6 +66,19 @@ const AudiencePage = () => {
     }
   };
 
+  const getComponentFromStep = (currStep: Number) => {
+    switch (currStep) {
+      case 0:
+        return <AddSource />;
+      case 1:
+        return <ApplyFilter />;
+      case 2:
+        return <PreviewSource />;
+      default:
+        return <AddSource />;
+    }
+  };
+
   return (
     <Container size="4">
       <Heading
@@ -56,38 +88,19 @@ const AudiencePage = () => {
         iconColor="text-emerald-500"
         bgColor="bg-emerald-500/10"
       />
-      <Flex gap="3">
-        <Box>
-          <TextField.Input
-            value={tweetUrl}
-            placeholder="Enter twitter url…"
-            size="3"
-            onChange={handleTweetUrlChange}
-          />
-        </Box>
-        <Button onClick={handleSubmit}>Submit</Button>
-      </Flex>
-      <Box mr="3">
-        <Flex gap="3">
-          <Card>
-            <Flex direction="column" gap="3">
-              <Text>Tweet Source</Text>
-              <Text>Tweet by @nkjnj</Text>
-              <Text>What's the highest ROI activity you can do today?</Text>
-              <Text>3.2 Likers</Text>
-              <Text>206 Retweets</Text>
-            </Flex>
-          </Card>
-          <Card>
-            <Text>Bio Contents</Text>
-            <Flex gap="3">
-              <Badge color="blue">Marketer</Badge>
-              <Badge color="blue">SMMA</Badge>
-              <Badge color="blue">agency</Badge>
-            </Flex>
-          </Card>
+      <Card mx="4">
+        <Flex direction="column">
+          {getComponentFromStep(step)}
+          <Button
+            my="5"
+            ml="5"
+            style={{ width: 120 }}
+            onClick={handleNextClick}
+          >
+            Next
+          </Button>
         </Flex>
-      </Box>
+      </Card>
     </Container>
   );
 };
