@@ -13,6 +13,7 @@ import {
   BarChart2,
   MessageCircle,
   Timer,
+  Podcast,
 } from "lucide-react";
 import { usePathname } from "next/navigation";
 
@@ -29,22 +30,28 @@ const routes = [
     color: "text-sky-500",
   },
   {
-    label: "Audiences",
+    label: "Superfan Screener",
     icon: Users,
     href: "/audience",
     color: "text-violet-500",
   },
   {
-    label: "Automation",
+    label: "Automated Outreach",
     icon: Timer,
     color: "text-pink-700",
     href: "/campaign",
   },
   {
-    label: "Messages",
+    label: "Response insights",
     icon: MessageCircle,
     color: "text-orange-700",
     href: "/leads",
+  },
+  {
+    label: "Interview insights",
+    icon: TestTube2Icon,
+    color: "text-zinc-500",
+    href: "/audience",
   },
   {
     label: "Settings",
@@ -70,7 +77,7 @@ export const Sidebar = ({
             <Image fill alt="Logo" src="/logo.png" />
           </div>
           <h1 className={cn("text-2xl font-bold", poppins.className)}>
-            Autoset.ai
+            Gamethinking.ai
           </h1>
         </Link>
         <div className="space-y-1">

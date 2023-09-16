@@ -1,0 +1,334 @@
+{
+    "messages":[
+        {"role": "system", "content":"You are an experienced User research expert. You are assigned a task to recruit users for researching a product. Based on the demographics provided, you will create a 6 questions screener to select the best users to interview"},
+        {
+            "role": "user",
+            "content": "Based on the CRITERIA provided, you will create a 6-question screener to select the best users to interview. CRITERIA = We're recruiting adults 18-55 located in the United States who suffer from eczema and/or dry itchy skin and searching for a topical non-steroidal cure to help us test a new healing lotion & skincare app."
+          },
+          {
+            "role": "assistant",
+            "content": "1. Which statement best describes your overall skin health? (Select one)\n- Overall healthy, skin gets itchy but it's manageable\n- Recently dealing with eczema for the first time, trying various solutions\n- Had eczema for a while, tried various OTC solutions\n- Saw a dermatologist, got a prescription, & it's working...sometimes\n- Working with my dermatologist, trying new prescriptions & approaches\n- Near constant flare-ups. I've tried everything, I'm at the end of my rope.\n- None of these - I don't have an ongoing problem with itchy skin.\n\n2. In the past 6 months, which of the following have you done? (Select all that apply)\n- Searched online for an eczema solution\n- Booked or completed an appointment with a dermatologist\n- Purchased an OTC cream (e.g. Aveeno, CeraVe, etc)\n- Purchased an OTC steroid\n- Tried a prescription biologic (e.g. Humira, Skyrizi, Opzelura, etc)\n- Joined or visited an online eczema group (Facebook, Reddit, Whatsapp, etc)\n- Downloaded a skin-related mobile app (e.g. Olay Skin Advisor, etc)\n- Tried a prescription steroid\n- Taken an oatmeal bath\n- None of the above\n\n3. How often does your skin condition keep you from doing something you want to do (e.g., fall asleep, wear short sleeves, go to a social gathering, etc)?\n- multiple times a day\n- daily\n- few times a week\n- weekly\n- monthly\n- occasionally\n- never\n\n4. Tell us about your skin care routine on a typical day. What products do you use? Where do you apply them? In what order? What time(s) of day? How do you deal with flare-ups vs. non-flare-ups? Please be detailed and specific.\n\n5. What's working best for you right now about your current skin care regimen?\n\n6. If you could change something about the products available to treat your skin, what would you wish for?"
+          }
+          
+    ]
+}
+{
+    "messages": [
+      {
+        "role": "system",
+        "content": "You are an experienced User research expert. You are assigned a task to recruit users to research a product."
+      },
+      {
+        "role": "user",
+        "content": "Based on the CRITERIA provided, you will create a 6-question screener to select the best users to interview. CRITERIA = We're recruiting adults 18-55 located in the United States who suffer from eczema and/or dry itchy skin and searching for a topical non-steroidal cure to help us test a new healing lotion & skincare app."
+      },
+      {
+        "role": "assistant",
+        "content": "1. Which statement best describes your overall skin health? (Select one)\n- Overall healthy, skin gets itchy but it's manageable\n- Recently dealing with eczema for the first time, trying various solutions\n- Had eczema for a while, tried various OTC solutions\n- Saw a dermatologist, got a prescription, & it's working...sometimes\n- Working with my dermatologist, trying new prescriptions & approaches\n- Near constant flare-ups. I've tried everything, I'm at the end of my rope.\n- None of these - I don't have an ongoing problem with itchy skin.\n\n2. In the past 6 months, which of the following have you done? (Select all that apply)\n- Searched online for an eczema solution\n- Booked or completed an appointment with a dermatologist\n- Purchased an OTC cream (e.g. Aveeno, CeraVe, etc)\n- Purchased an OTC steroid\n- Tried a prescription biologic (e.g. Humira, Skyrizi, Opzelura, etc)\n- Joined or visited an online eczema group (Facebook, Reddit, Whatsapp, etc)\n- Downloaded a skin-related mobile app (e.g. Olay Skin Advisor, etc)\n- Tried a prescription steroid\n- Taken an oatmeal bath\n- None of the above\n\n3. How often does your skin condition keep you from doing something you want to do (e.g., fall asleep, wear short sleeves, go to a social gathering, etc)?\n- multiple times a day\n- daily\n- few times a week\n- weekly\n- monthly\n- occasionally\n- never\n\n4. Tell us about your skin care routine on a typical day. What products do you use? Where do you apply them? In what order? What time(s) of day? How do you deal with flare-ups vs. non-flare-ups? Please be detailed and specific.\n\n5. What's working best for you right now about your current skin care regimen?\n\n6. If you could change something about the products available to treat your skin, what would you wish for?"
+      }
+    ]
+  }
+  {
+    "messages": [
+      {
+        "role": "system",
+        "content": "You are an experienced User research expert. You are assigned a task to recruit users to research a product."
+      },
+      {
+        "role": "user",
+        "content": "Based on the CRITERIA provided, you will create a 6-question screener to select the best users to interview. CRITERIA = We're recruiting new managers 25-45 located in Germany, England, the Netherlands, United States who are struggling to be a good manager & do their job well searching for management advice & coaching to help them succeed to help us test a coaching app for new managers."
+      },
+      {
+        "role": "assistant",
+        "content": "1. How many direct reports do you have?\n- 0\n- 1-4\n- 5-9\n- 10+\n\n2. In the past 12 months, which of the following have you tried? (Select all that apply)\n- Executive coaching\n- Leadership training workshop\n- Online course on leadership or management\n- Reading a book on leadership or management\n- Joining a community of peers who want to improve leadership skills\n\n3. In the past 2-3 weeks, which of these best describes how you felt at work:\n- My days are a whirlwind - I'm struggling to stay on top of everything\n- I can't control most of the things that happen to me - my day is mostly controlled by other people\n- I feel energized and enthusiastic\n- Most days are dreadful and I can't wait to sign off for the evening\n- Sometimes I feel unproductive, but mostly I'm okay\n- I feel calm and am able to concentrate\n- Other\n\n4. Tell us in detail about the last time you ran into a situation with your team where you didn't know what to do. What happened? How did you handle it? Please be detailed & specific.\n\n5. What's working best about the support, tools, or resources you have right now? What's helping you the most?\n\n6. In your efforts to grow as a leader, what kind of support, tools, or resources do you wish for? What do you wish was different about the current options you have?"
+      }
+    ]
+  }
+  {
+    "messages": [
+      {
+        "role": "system",
+        "content": "You are an experienced User research expert. You are assigned a task to recruit users to research a product."
+      },
+      {
+        "role": "user",
+        "content": "Based on the CRITERIA provided, you will create a 6-question screener to select the best users to interview. CRITERIA = We're recruiting self-identified fashionistas 18-45 located in United States who love high-end designer clothes but can't afford them searching for a fun way to play dress-up with high-end designer clothes to help us test a new mobile fashion game where you build your dream closet."
+      },
+      {
+        "role": "assistant",
+        "content": "1. In the last 6 months, which fashion-related activities have you engaged in? (Select all that apply)\n- reading a fashion magazine (Vogue, Harpers, etc)\n- reading fashion blog(s)\n- following or browsing fashion content on social media (IG, snapchat, etc)\n- giving feedback or advice on someone else's outfit\n- soliciting feedback or advice on your outfit\n- shopping for clothes with a friend\n- renting an outfit for a special occasion\n- purchasing an outfit for a special occasion\n- Other\n- None - I don't engage in fashion-related activities\n\n2. In the past two months, how often did you play mobile games?\n- multiple times a day\n- daily\n- few times a week\n- weekly\n- monthly\n- occasionally\n- never\n\n3. In the last month, how much did you spend on gaming?\n- under $10\n- $10-25\n- $25-50\n- $51-99\n- $100+\n\n4. Describe a recent fashion-related experience (e.g. something from the list above). What did you do? Who else was involved? What was the outcome? (Please be detailed and specific.)\n\n5. Tell me about a fashion-related moment of joy or satisfaction you experienced recently. What happened? What made it memorable for you?\n\n6. If you could add or improve one specific thing about engaging with fashion in your daily life, what would it be?"
+      }
+    ]
+  }
+  {
+    "messages": [
+      {
+        "role": "system",
+        "content": "You are an experienced User research expert. You are assigned a task to recruit users to research a product."
+      },
+      {
+        "role": "user",
+        "content": "Based on the CRITERIA provided, you will create a 6-question screener to select the best users to interview. CRITERIA = We're recruiting FD subscribers 25-55 located in The Netherlands who need specialized financial news in a timely manner searching for a better way to keep up to date with financial news to help us test a new personalized news feature for FD."
+      },
+      {
+        "role": "assistant",
+        "content": "1. Which of these statements best describes your FD reading habits?\n- During work, I only want FD-content relevant for my work, so I don't get distracted.\n- When my company or a client's is in the news on FD, I want to know right away.\n- News about specific company events (e.g. acquisitions, reoganisations, bankruptcies), I don't want to miss.\n- To quickly make decisions to sell or buy stocks, I want relevant FD content efficiently grouped together.\n- Other…\n\n2. Which news sources do you read besides the FD?\n- Financial Times\n- Bloomberg\n- The Economist\n- Follow the Money\n- Other\n- None\n\n3. Last month, which features of news providers did you use?\n- FT - myFT (based on topics you follow: personal feed, notifications, email summaries)\n- FT - curated thematic newsletters\n- Follow the Money - Mijn FTM (based on authors, panels and dossiers you follow)\n- Other\n\n4. Walk me through a typical weekday, morning til evening, & tell us how you find the news you need.\n\n5. What is the biggest challenge in finding the important articles on FD? How does that impact you?\n\n6. If you could change one thing on FD to more easily find important articles: what would that be? Did you see a great solution somewhere else or do you have an idea of your own?"
+      }
+    ]
+  }
+  {
+    "messages": [
+      {
+        "role": "system",
+        "content": "You are an experienced User research expert. You are assigned a task to recruit users to research a product."
+      },
+      {
+        "role": "user",
+        "content": "Based on the CRITERIA provided, you will create a 6-question screener to select the best users to interview. CRITERIA = We're recruiting digital professionals 25-55 located in United States, England, Israel, India who struggle to find product/market fit searching for education & coaching to help them find product/market fit faster to help us test a new educational workshop to help you find product/market fit."
+      },
+      {
+        "role": "assistant",
+        "content": "1. How many people are employed by your company or organization?\n- 1\n- 2-9\n- 10-50\n- 51-5000\n- 5000+\n- other\n\n2. How would you describe your role at work? Check all that apply.\n- startup founder or co-founder\n- small business owner\n- freelancer or consultant\n- executive leader - CXO, VP, Director\n- Design / Product Leader at established company or consulting firm\n- Design Partner / Product Leader at VC, Incubator, Accelerator\n- investor - VC, Angel, Incubator, etc.\n- Product Manager / Team Leader / Producer\n- artist, animator, modeller, filmmaker\n- programmer, software architect, engineer\n- full-time or part-time student\n- educator,  professor, teacher, coach\n\n3. Which of these online courses appeals to you?\n- Game Thinking Fundamentals: learn the Game Thinking system\n- Superfan Fundamentals: find and mobilize your hot-core early customers\n- Discovery Fundamentals: accelerate discovery with Concept Scenarios\n- Cooperative Design Fundamentals: positive-sum design & winning together\n- Progress Design Fundamentals: create compelling progression system\n- Problem Solving Fundamentals: sharpen your problem-solving skills with games and puzzles\n- Online Training: Become a Certified Game Thinking Design Coach\n\n4. Tell us about the last time you took a course or workshop to build your professional skills. What was the course/workshop title? What was it like? Please be detailed & specific.\n\n5. What did you like the most about this educational experience? What worked best?\n\n6. What was frustrating or annoying about your educational experience? What would have made it better for you?"
+      }
+    ]
+  }
+  {
+    "messages": [
+      {
+        "role": "system",
+        "content": "You are an experienced User research expert. You are assigned a task to recruit users to research a product."
+      },
+      {
+        "role": "user",
+        "content": "Based on the CRITERIA provided, you will create a 6-question screener to select the best users to interview. CRITERIA = We're recruiting adults 25-55 located in United States who are actively shopping for a new car searching for a car that'll save them money & be affordable in the long run to help us test a leasing program for electric car batteries."
+      },
+      {
+        "role": "assistant",
+        "content": "1. What is your income range?\n- Under $50,000\n- Between $50,000 and $74,999\n- Between $75,000 and $99,999\n- Between $100,000 and $124,999\n- Between $125,000 and $149,999\n- Between $150,000 and $200,000\n- Over $200,000\n\n2. When do you intend to get your next vehicle?\n- Soon, I'm actively looking\n- Next 3 months\n- Next year\n- Next 3 years\n- Not sure\n\n3. What statement best describes your stance on electric vehicles?\n- Currently have one, and love it\n- Currently use, but intend to switch to non-EV\n- Don't currently have an EV, but eager to get one\n- Not sure, maybe later in the future\n- No way, don't care for them\n\n4. Describe the most recent situations that prompted you to consider getting a new vehicle. What triggered you, where was it at, who were you with, what did you see and think about?\n\n5. Describe your process for considering purchasing/leasing of a particular vehicle. What do you do, what factors into your decision, where do you go for information?\n\n6. What concerns do you have about purchasing/leasing an electric vehicle?"
+      }
+    ]
+  }
+  {
+    "messages": [
+      {
+        "role": "system",
+        "content": "You are an experienced User research expert. You are assigned a task to recruit users to research a product."
+      },
+      {
+        "role": "user",
+        "content": "Based on the CRITERIA provided, you will create a 6-question screener to select the best users to interview. CRITERIA = We're recruiting adults 18-55 located in United States, England, Germany who used Geocaching in the past year searching for a better Geocaching experience to help us test an update to the Geocaching app."
+      },
+      {
+        "role": "assistant",
+        "content": "1. When did you find your first geocache? A guesstimate is fine.\n- Less than 1 month ago\n- 1-3 months ago\n- 4-6 months ago\n- 7-12 months ago\n- Over a year ago, but less than 2 years\n- 2 or more years ago\n- Other…\n\n2. Which of these have you done in the last six months? Check all that apply\n- Found a geocache in my neighborhood\n- Found a geocache on a sunny day\n- Found a geocache while traveling\n- Found a geocache while hiking\n- Walked to a geocache from my home\n- Drove to a geocache\n- Found a geocache alone\n- Found a geocache with my dog\n- Found a geocache with a friend\n- Found a geocache with my family\n- Found a geocache with my children\n- Found a geocache with my significant other\n- None of the above\n\n3. Which of these have you done in the last six months? Check all that apply\n- Watched geocaching videos (e.g. YouTube, TikTok)\n- Browsed geocaching-specific online groups (e.g. Reddit, Facebook Groups, Geocaching Forums)\n- Posted a question on a geocaching online group (e.g. Reddit, Facebook Groups, Geocaching Forums)\n- Listened to a geocaching podcast\n- Read web articles about geocaching\n- Sent a message to someone on the Geocaching App\n- Went to a geocaching-specific event\n- Found a geocache with a more experienced geocacher\n- Used the Geocaching mobile app\n- Used Geocaching.com website\n- Found a geocache that someone else recommended to me\n- Talked about geocaching with someone else over the phone or in person\n- None of the above\n\n4. Think of a recent memorable geocaching experience. Walk me through that day, morning to night, in detail. Why did you go geocaching that day? Where did you go? What did you do after?\n\n5. Describe a moment of joy from a recent geocaching experience in detail. What happened? How did you feel? How does that express what you like about geocaching?\n\n6. Describe a moment of frustration from a recent geocaching experience. What happened? What can we do to improve it?"
+      }
+    ]
+  }
+  {
+    "messages": [
+      {
+        "role": "system",
+        "content": "You are an experienced User research expert. You are assigned a task to recruit users to research a product."
+      },
+      {
+        "role": "user",
+        "content": "Based on the CRITERIA provided, you will create a 6-question screener to select the best users to interview. CRITERIA = We're recruiting casual gamers 18-35 located in United States who actively play MeChat, LoveLink or BitLife searching for a more engaging & fun story-game experience to help us test a new mobile dating sim."
+      },
+      {
+        "role": "assistant",
+        "content": "1. How old are you?\n- Under 18\n- 18-24\n- 25-35\n- 36-50\n- 51-64\n- 65+\n\n2. How often do you play games online with others?\n- multiple times a day\n- daily\n- few times a week\n- weekly\n- monthly\n- occasionally\n- never\n\n3. In the last 6 months, which games or apps did you engage with?\n- Dating apps (Tinder, Bumble, Hinge, Smitten, Snack, Grindr, etc)\n- Personality Quizzes (Buzzfeed, Quiplash, OKCupid, etc)\n- Story Games (Episode, Chapters, Choices, Tabou, etc)\n- Quick-play story games (Reigns, Bitlife, etc)\n- Dating sims (Mechat, Winked, Lovelink, etc)\n- Virtual social worlds (HiRise, Avakin Life, IMVU, etc)\n- Life Sims (Superstar Life, Hollywood Story, The Sims, Party in my Dorm)\n- Multi-player casual games (Words w/Friends, QuizUp, Draw Together, Among Us, etc)\n\n4. Describe a recent session playing a game you enjoy - start to finish. Which game did you play? What made it fun? Did you play solo - or with others? Did you discuss it with anyone afterwards?\n\n5. Describe a 'feeling of connection' you experienced recently while gaming with someone else. What happened? Who were you playing with? Why was it meaningful?\n\n6. What could be better about your experience playing games with others? What's one thing you wish you could do with someone else in (or around) a game, to make it more fun & satisfying for you?"
+      }
+    ]
+  }
+  {
+    "messages": [
+      {
+        "role": "system",
+        "content": "You are an experienced User research expert. You are assigned a task to recruit users to research a product."
+      },
+      {
+        "role": "user",
+        "content": "Based on the CRITERIA provided, you will create a 6-question screener to select the best users to interview. CRITERIA = We're recruiting parents 25-55 located in United States who have school-aged kids searching for a better, more convenient way to learn & enjoy math to help us test a new math game for kids."
+      },
+      {
+        "role": "assistant",
+        "content": "1. What grade level or age is your child? If you have more than one child, check all that apply.\n- Grade 1 (ages 6-7)\n- Grade 2 (ages 7-8)\n- Grade 3 (ages 8-9)\n- Grade 4 (ages 9-10)\n- Grade 5 (ages 10-11)\n- Other…\n\n2. What type of school does your child attend? Check all that apply.\n- Public school\n- Charter school\n- Private school\n- Home school\n- Other…\n\n3. In the last six months, what extra-curricular math enrichment activities has your child done?\n- Private tutoring\n- Kumon, C2, Sylvan, Mathnasium\n- Russian School of Mathematics\n- Khan Academy (web site)\n- Coding camps or classes\n- Mad Science camps or classes\n- GATE program activities\n- Revolution math\n- Other…\n\n4. What does your child most enjoy about math? Please be specific.\n\n5. In what ways are you dissatisfied with your child's math education? What's been frustrating or limiting?\n\n6. What outcomes do you want for your child's math education? What changes would you like to see to achieve those outcomes?"
+      }
+    ]
+  }
+  {
+    "messages": [
+      {
+        "role": "system",
+        "content": "You are a User Research expert. You have been assigned to create a 6-question screener for user interviews. The aim is to select the best candidates for research."
+      },
+      {
+        "role": "user",
+        "content": "Based on the CRITERIA provided, you will create a 6-question screener to select the best users to interview. CRITERIA: We're recruiting grassroots fundraisers 25-55 located in United States who want to see the impact of their contributions searching for a tool to improve their fundraising experience to help us test an NFT-powered political fundraising app."
+      },
+      {
+        "role": "assistant",
+        "content": "1. In the last 12 months, how frequently have you contributed to a political campaign?\n- Weekly (or more often)\n- Monthly\n- Quarterly\n- A few times a year\n- Once a Year\n- Rarely\n- Never\n\n2. In the last 12 months, have you attended any of these events (online or in–person)? Check all that apply\n- Democratic convention\n- Campaign fundraising event\n- Campaign volunteer event\n- Democratic club event\n- Activist or other organizer meetings\n- Other\n\n3. In the last 12 months, where did you go to learn or talk about candidates and campaigns?\nCheck all that apply\n- DailyKos\n- Politico\n- Facebook Feed\n- Facebook Groups\n- Twitter\n- Messaging Apps (WhatsApp, iMessage, Signal, Telegram, etc)\n- Other\n\n4. Walk me through the last time you donated to a campaign. What motivated or triggered your donation? And did you let others know afterwards? Please be detailed & specific.\n\n5. Tell me about a recent meaningful, satisfying, or joyful moment you experienced making a campaign contribution. What made it special for you?\n\n6. What's been frustrating or “missing” about your campaign donation experience? If you could wave a magic wand, what would you change?\n\nPlease write in English language."
+      }
+    ]
+  }
+  {
+    "messages": [
+      {
+        "role": "system",
+        "content": "You are a User Research expert. You have been assigned to create a 6-question screener for user interviews. The aim is to select the best candidates for research."
+      },
+      {
+        "role": "user",
+        "content": "Based on the CRITERIA provided, you will create a 6-question screener to select the best users to interview. CRITERIA: We're recruiting D&D players 25-55 located in United States, APAC region who want a better online D&D experience searching for alternative platforms to help us test a new online role-playing platform for D&D enthusiasts."
+      },
+      {
+        "role": "assistant",
+        "content": "1. In the last year, which of these mobile RPGs did you play?\n- Among Us\n- Genshin Impact\n- Episode\n- Choices\n- MeChat\n- Hogwarts Mystery\n- Immortal Diaries\n- None of the above\n- Other\n\n2. In the last year, which of these multi-user activities did you participate in?\n- Playing Dungeons & Dragons or similar tabletop games\n- World of Warcraft/MMORPGs\n- Tinder or other dating apps\n- None of the above\n- Other\n\n3. In the last month, how often did you play RPGs or multi-user games?\n- Multiple times a day\n- Once every day or every two days\n- A few times a week\n- Less than once a week\n- Other\n\n4. Tell me about a recent session you had. Were you playing with others? How did that change the experience? Please be detailed and specific.\n\n5. What kept you coming back to these mobile RPGs or multi-user activities? Please be detailed and specific.\n\n6. What was missing that would've helped you enjoy the experience more?\n\nPlease write in English language."
+      }
+    ]
+  }
+  {
+    "messages": [
+      {
+        "role": "system",
+        "content": "You are a User Research expert. You have been assigned to create a 6-question screener for user interviews. The aim is to select the best candidates for research."
+      },
+      {
+        "role": "user",
+        "content": "Based on the CRITERIA provided, you will create a 6-question screener to select the best users to interview. CRITERIA: We're recruiting web coders 25-45 located in First The Philippines, then United States who want to get into Web3 coding searching for a more rewarding learning platform to help us test a Web3 learn-to-code game."
+      },
+      {
+        "role": "assistant",
+        "content": "1. Which of these programming languages are you proficient at?\n- Javascript\n- PHP\n- C sharp\n- C++\n- Python\n- React\n- Node.js (server)\n- Java\n- Other\n- None\n\n2. In the last 12 months, which of the following activities have you engaged in?\n- Learned blockchain coding via free resources (blogs, Twitter, Reddit, YouTube, Dev Documentation)\n- Learned blockchain coding via paid coursework and media\n- Bought course on Udemy or Coursera on Blockchain programming\n- Searched for blockchain coding education resources on Google or Youtube\n- Joined a Discord community that helps people learn Blockchain coding\n- Created a Hello World Solidity Project\n- Freelance/employee Web2 engineer or IT professional\n- Searched for Solidity/Rust Tutorials on Youtube\n- Browsed Solidity/Rust Docs\n- Tried Cryptozombies\n- Browsed Crypto coding curriculum\n- Completed Crypto coding learning module\n- Talked to a friend about Ethereum/Solana/Polygon/Avalanche/Algo smart contracts\n- Coded a simple DApp or Smart contract\n- None\n- Other\n\n3. Which of these education solutions have you tried for learning Web3 coding?\n- CryptoZombies\n- Ethereum/Solidity Subreddit\n- Youtube Tutorial\n- Udemy Course\n- Buildspace.so\n- CryptoDevs\n- Pair Programming in Discord Servers\n- DevDao\n- Other\n- None\n\n4. What type of games do you play regularly?\n- Mobile\n- Console\n- PC\n- Crypto Games\n- Other\n- None\n\n5. Walk me through a recent experience trying to learn Web3 coding. What were you doing? What prompted you to do it? How did it go?\n\n6. What specific app/community/course/experience has been the most helpful for you to learn Web3 coding and why? What about it was helpful?\n\nPlease write in English language."
+      }
+    ]
+  }
+  {
+    "messages": [
+      {
+        "role": "system",
+        "content": "You are a User Research expert. You have been assigned to create a 6-question screener for user interviews. The aim is to select the best candidates for research."
+      },
+      {
+        "role": "user",
+        "content": "Based on the CRITERIA provided, you will create a 6-question screener to select the best users to interview. CRITERIA: We're recruiting active outdoor enthusiasts 25-45 (role & age) located in United States who want to make their hobby more affordable (qualifying problem) searching for a VIP rewards program to drive engagement (solution-seeking) to help us test a new rewards program for outdoor enthusiasts (R&D)."
+      },
+      {
+        "role": "assistant",
+        "content": "1. Which outdoor sports have you participated in within the past 12 months?\n- Running\n- Hiking\n- Backpacking\n- Camping\n- SCUBA Diving\n- Rock Climbing\n- Surfing\n- Waterskiing/Wakeboarding\n- Skiing / Snowboarding\n- Hunting\n- Fishing\n- Cycling\n- Golf\n- Boating\n- Other\n\n2. In the past 12 months how often did your outdoor adventures involve travel?\n- Few times a week\n- Weekly\n- Few times a month\n- Monthly\n- Seasonally\n- Annually\n- Never\n- Other\n\n3. How do you fund your outdoor adventures?\n- I use my regular income\n- Cash-in loyalty points to cover expenses (i.e., for travel, lodging, etc.)\n- Part-time side gig helps me fund my hobby\n- Parents, spouse or relatives help me cover costs\n- I reduce costs by going with a group\n- My friends chip in for me\n- Sometimes I'll chip in more to include friends\n- I organize/lead groups to help me offset the costs\n- I'm sponsored by brands\n- I put it on a credit card to pay over time\n- Other\n\n4. Tell us about your most exciting outdoor adventure from the past 12 months. Walk us through your preparation, expectations and your experience. (Be as detailed as possible)\n\n5. Before, during, and after your most exciting outdoor adventure what tools, apps, websites and equipment did you find most useful or important? What worked well for you? (Be as detailed as possible)\n\n6. What could have been better about the tools, apps, websites, and equipment you used? What do you wish you had that could have made your outdoor adventure better? (Be as detailed as possible)\n\nPlease write in English language."
+      }
+    ]
+  }
+  {
+    "messages": [
+      {
+        "role": "system",
+        "content": "You are a User Research expert. You have been assigned to create a 6-question screener for user interviews. The aim is to select the best candidates for research."
+      },
+      {
+        "role": "user",
+        "content": "Based on the CRITERIA provided, you will create a 6-question screener to select the best users to interview. CRITERIA: We're recruiting existing AI chatbot users 25-45 (activity & age) located in United States who want an AI friend who'll get to know you (qualifying problem) searching for looking for a better AI companion experience (solution-seeking) to help us test a new AI chatbot friend (R&D)."
+      },
+      {
+        "role": "assistant",
+        "content": "1. What is your current living situation?\n- Solo - I live alone\n- With roommates\n- With parent(s)\n- College dorm\n- With Partner\n- With Partner & Kid(s)\n- Solo with Kid(s)\n- Other\n\n2. How old are you?\n- Under 18\n- 18-24\n- 25-35\n- 36-50\n- 51-64\n- 65+\n\n3. How do you like to spend your free time? Check all that apply.\n- Reading a book\n- Reading & responding to social media posts\n- Scrolling through and liking photos (Instagram, etc.)\n- Watching videos online (YouTube, etc.)\n- Chatting with friends online\n- Playing mobile games (phone, tablet)\n- Playing PC or console games\n- Chatting with someone in-person\n- Getting together with friends in-person\n- Going out to an interesting place\n- Finding a new challenge for myself\n- Other\n\n4. How do you engage in and seek out social interactions online and in person on a typical weekday?\n\n5. What about on the weekend? Walk us through your social interactions last Saturday: morning to night, online and in person.\n\n6. What is satisfying and enjoyable about your social life now? Please describe which aspects of your interactions bring you moments of joy, satisfaction, pride, or contentment.\n\nPlease write in English language."
+      }
+    ]
+  }
+  {
+    "messages": [
+      {
+        "role": "system",
+        "content": "You are a User Research expert. You have been assigned to create a 6-question screener for user interviews. The aim is to select the best candidates for research."
+      },
+      {
+        "role": "user",
+        "content": "Based on the CRITERIA provided, you will create a 6-question screener to select the best users to interview. CRITERIA: We're recruiting party gamers 18-55 located in United States who enjoy music games like Guitar Hero & Karaoke Revolution searching for a fun party game to play on the weekends with friends to help us test a new multi-player music game."
+      },
+      {
+        "role": "assistant",
+        "content": "1. In the last 6 months, which music-related games have you played?\n- Guitar Hero\n- Just Dance\n- Friday Night Funkin'\n- Beat Saber\n- SuperNatural\n- Magic Tiles 3\n- Geometry Dash\n- Beatstar\n- Magic Jump: EDM dancing\n- Other\n- None - I don't play music-related games\n\n2. In the past two months, how often did you play music-related games?\n- multiple times a day\n- daily\n- few times a week\n- weekly\n- monthly\n- occasionally\n- never\n\n3. In the last month, how much did you spend on your gaming hobby?\n- under $10\n- $10-25\n- $25-50\n- $51-99\n- $100+\n\n4. What types of songs & genres do you enjoy the most when playing music-related games? (Please be detailed and specific.)\n\n5. Tell me about a moment of joy or satisfaction you experienced recently while playing a music-related game. What made it memorable for you?\n\n6. If you could add or improve one specific thing about music-related games, what would it be?\n\nPlease write in English language."
+      }
+    ]
+  }
+  {
+    "messages": [
+      {
+        "role": "system",
+        "content": "You are a User Research expert. You have been assigned to create a 6-question screener for user interviews. The aim is to select the best candidates for research."
+      },
+      {
+        "role": "user",
+        "content": "Based on the CRITERIA provided, you will create a 6-question screener to select the best users to interview. CRITERIA: We're recruiting adults 25-55 located in United States who have been diagnosed with pre-diabetes searching for a more convenient way to manage their blood sugar level to help us test a new app to manage your blood sugar & get healthier."
+      },
+      {
+        "role": "assistant",
+        "content": "1. Have you received any medical diagnosis related to management of blood glucose levels?\n- Type 2 Diabetes\n- Type 1 Diabetes\n- Pre-diabetes\n- Metabolic Syndrome\n- Other\n- None - I have no diagnosis around managing glucose levels\n\n2. Which tools/apps/devices have you used to monitor your blood sugar levels?\n- Eversense\n- Glimp\n- Glooko\n- Glucose Buddy\n- Glucose Tracker++\n- Levels Health\n- Nightscout\n- MiaoMiao\n- MySugr\n- Nutrisense\n- Spike\n- Sugarmate\n- Tidepool\n- xDrip/xDrip+\n- Keto Mojo\n- Other\n- None\n\n3. How much excess weight are you trying to lose?\n- none\n- less than 20 lbs\n- 20lbs-30lbs\n- 30lbs-50lbs\n- 50lbs+\n- Other\n\n4. Which of the following diets/protocols have you tried in the last 2 years?\n- Atkins/Low-Carb\n- Calorie Restriction\n- Whole30\n- Intermittent Fasting\n- Keto\n- Low-Fat\n- Macro Tracking/IIFYM\n- Nutrisystem\n- Paleo/Primal\n- Vegan/Vegetarian\n- Weight Watchers\n- Other\n- None\n\n5. Walk me through a typical day with your CGM - e.g. yesterday.  When did you check it? How did you use the data? Did you make any medication or dietary choices based on what you saw? Did you manually track any additional information?\n\n6. Of all the tools/apps/devices you have used with your CGM, what has been particularly helpful or insightful for you, and why?\n\nPlease write in English language."
+      }
+    ]
+  }
+  {
+    "messages": [
+      {
+        "role": "system",
+        "content": "You are a User Research expert. You have been assigned to create a 6-question screener for user interviews. The aim is to select the best candidates for research."
+      },
+      {
+        "role": "user",
+        "content": "Based on the CRITERIA provided, you will create a 6-question screener to select the best users to interview. CRITERIA: We're recruiting people seeking mindfulness 25-45 located in India & United States who wants more mindfulness in their life searching for an on-the-go way to relax to help us test a new lightweight mindfulness app."
+      },
+      {
+        "role": "assistant",
+        "content": "1. Which of the following have you experienced in the last 18 months?\nRecently became a mom/dad\nStarted a new job\nMoved to a new location\nHaving a rough patch in your relationship\nStruggling financially\nDiagnosed with a health issue\nNone\nother\n\n2. In the last month, which of the following activities did you try when you felt low?\nLight exercise (e.g. take a walk)\nWork out\nRead or listen to books\nUse a meditation or mindfulness app\nBrowse social media content\nPlay online/mobile games\nNone, leave it as it is\nother\n\n3. Which apps/tools have you used in the last 18 months to take action towards improving\nyour well-being?\nRead a self-help book\nWork out\nHeadspace\nMindvalley\nCalm\nSelf help course\nHaven't used any app or tool\nother\n\n4. Walk us through a typical weekday, say last Tuesday, how did your mood fluctuate and\nhow did you manage it to feel better?\n\n5. Tell us about a recent experience where an app/tool worked for you. What made it\neffective?\n\n6. What could be better about the apps/tools you have used before? If you were in charge\nand you could change things, what would you like to see?\n\nPlease write in English language."
+      }
+    ]
+  }
+  {
+    "messages": [
+      {
+        "role": "system",
+        "content": "You are a User Research expert. You have been assigned to create a 6-question screener for user interviews. The aim is to select the best candidates for research."
+      },
+      {
+        "role": "user",
+        "content": "Based on the CRITERIA provided, you will create a 6-question screener to select the best users to interview. CRITERIA: We're recruiting teens interested in mental health and creativity 16-24 years old located in United States and Europe who are looking for ways to support their mental health searching for  mental health apps to help us test a new mental health game for teens."
+      },
+      {
+        "role": "assistant",
+        "content": "1. What kind of topics do you connect about online with other people? (choose many)\nArt\nCosplay\nWriting\nJournaling\nMental Health or emotional wellbeing\nChronic or serious Illness\nCurrent events\nPolitics\nGames\nCooking\nGraffiti\nFashion\nBullying\nLoneliness\nVideo Gaming\nOther\n\n2. Which of the following community platforms, message boards, forums have you regularly participated in in the last four months?\nOnline community on Reddit\nOnline community on Discord\nBe apart of an in-game community\nBe apart of an online community on YouTube\nBe apart of an online community on Instagram\nBe apart of an online community on Facebook\nOther\nNone\n\n3. What have you gotten out of engaging online with others in these communities / message board, forum, etc?\nHelpfulness\nAsk questions\nShare advice\nShare photos\nBe creative with other people\nShare experiences\nEncourage others\nJust watch and observe\nOther: ____ (box to fill in)\n\n4. Tell us about the last time you felt good about participating online – why did you engage, what made it feel good?\n\n5. Tell us about the last time you felt bad about participating online – why did you engage, what made it feel bad?\n\n6. Have you ever left an online community because it was so bad? If yes, why?\nIf you had a magic wand, how would you create your community, what would you include, what is important to you, what kind of behaviors do you want to see and which ones are a red flag for you?\n\nPlease write in English language."
+      }
+    ]
+  }
+  {
+    "messages": [
+      {
+        "role": "system",
+        "content": "You are a User Research expert. You have been assigned to create a 6-question screener for user interviews. The aim is to select the best candidates for research."
+      },
+      {
+        "role": "user",
+        "content": "Based on the CRITERIA provided, you will create a 6-question screener to select the best users to interview. CRITERIA: We're recruiting parents feeding young children with children 10 months - 5 years located in United States and Europe who are fist time parents or who are feeling stressed or overwhelmed with feeding searching for information to simplify mealtimes and understand their child's behaviours to help us test a feeding coach app."
+      },
+      {
+        "role": "assistant",
+        "content": "1. I am looking for a feeding related app or information because (choose many)\nI need meal ideas\nI need ideas on how to handle mealtime stress/deal with my picky eater\nI want to learn about the best ways to feed my child\nI am looking for a professional source of information\nI want to learn more about my child's development in relation to food\nI am worried my child is not getting enough nutrients\nI need ideas on how to feed my family in a more budget-friendly way\nI want to make just one meal for the whole family to share\n\n2. How often do you look for information/solutions? (choose one)\nmultiple times a day\nevery day\nonce a week\nonce a month\n\n3. Which of the following activities have you done in the last two months to get support with feeding your child and family? (choose many)\nI searched the internet\nI spoke to a health professional\nI used Solid Starts app and website\nI used Little Lunches app and website\nI used My Fussy Eater app and website\n\n4. Walk me through a typical day last week, when you engaged in some of the activities you listed above to solve feeding dileas, what made you search for support and how did it go?\n\n5. What tools, apps, events etc are you using right now to deal with mealtime stress? What's working for you?\n\n6. When you imagine a life without mealtime stress, what would be different in your life and how would you feel? What kind of support would you be getting?\n\nPlease write in English language."
+      }
+    ]
+  }
+  {
+    "messages": [
+      {
+        "role": "system",
+        "content": "You are a User Research expert. You have been assigned to create a 6-question screener for user interviews. The aim is to select the best candidates for research."
+      },
+      {
+        "role": "user",
+        "content": "Based on the CRITERIA provided, you will create a 6-question screener to select the best users to interview. CRITERIA: We're recruiting parents of children with progressive myopia with children 6 - 12 located in Germany, Spain or the UK who are worried about their kids long term myopia situation searching for information on treatments to help us test a product concept for a light based treatment to slow progressive myopia."
+      },
+      {
+        "role": "assistant",
+        "content": "1. What is your current situation related to myopia?\n< -1\nbetween 1 and 2\nbetween 2-3 Parents,\nmore than 3+\n\n2. How has your family dealt with myopia so far?\nit’s not an issue\njust our immediate family is involved\nwider circle including grandparents\n\n3. What solutions have you investigated around extreme Myopia?\nNone\nOrtho-K Lenses\nMyosmart glasses\nAtropine eyedrops\nTalked to my pediatrician\nTalked to my Optometrist\nOther\n\n4. DAY IN THE LIFE:  Walk me through your day, morning to night, and tell me how you myopia is impacting your child’s life right now?\n\n5. WHAT’S WORKING: What tools, apps, events etc are you using right now to handle the progressive myopia? How is this working for you?\n\n6. MAGIC WAND: What could be better? If you were in charge and you could change things, what would you like to see in progressive myopia treatments?\n\nPlease write in English language."
+      }
+    ]
+  }
