@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { toast } from "react-hot-toast";
+import axios from "axios";
 import { useRouter } from "next/navigation";
 import { Car, Users } from "lucide-react";
 import MultiStep from "react-multistep";
@@ -25,6 +26,7 @@ import StepTwo from "./steptwo";
 import AddSource from "./addsource";
 import ApplyFilter from "./applyfilter";
 import PreviewSource from "./preview";
+import { Label } from "@radix-ui/react-label";
 
 const steps = [
   { title: "StepOne", component: <StepOne /> },
@@ -38,6 +40,8 @@ const AudiencePage = () => {
   const router = useRouter();
 
   const [tweetUrl, setTweetUrl] = useState("");
+  const [userName, setUserName] = useState("");
+  const [name, setName] = useState("");
 
   const [step, setStep] = useState(0);
 
@@ -54,7 +58,14 @@ const AudiencePage = () => {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+
     try {
+      const response = await axios.get("/api/twitter", {
+        params: {
+          tweetUrl: tweetUrl,
+        },
+      });
+      console.log(response.data.username);
     } catch (error: any) {
       if (error?.response?.status === 403) {
         proModal.onOpen();
@@ -90,13 +101,26 @@ const AudiencePage = () => {
       />
       <Card mx="4">
         <Flex direction="column">
-          {getComponentFromStep(step)}
-          <Button
-            my="5"
-            ml="5"
-            style={{ width: 120 }}
-            onClick={handleNextClick}
-          >
+          <Grid columns="1" gap="3" width="100%">
+            <Container ml="5">
+              <Label>Add tweet link</Label>
+              <Flex gap="3">
+                <Flex direction="column" gap="3">
+                  <TextField.Input
+                    variant="soft"
+                    radius="large"
+                    size="3"
+                    style={{ width: 400 }}
+                    color="gray"
+                    value={tweetUrl}
+                    onChange={handleTweetUrlChange}
+                    placeholder="https://twitter.com/user/status/1234"
+                  />
+                </Flex>
+              </Flex>
+            </Container>
+          </Grid>
+          <Button my="5" ml="5" style={{ width: 120 }} onClick={handleSubmit}>
             Next
           </Button>
         </Flex>
