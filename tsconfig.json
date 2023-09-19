@@ -28,7 +28,8 @@
     "**/*.ts",
     "**/*.tsx",
     ".next/types/**/*.ts",
-    "app/api/twitter/route.js"
+    "app/api/twitterlikes/route.js",
+    "app/(dashboard)/(routes)/audience/userstable.jsx"
   ],
   "exclude": ["node_modules"]
 }

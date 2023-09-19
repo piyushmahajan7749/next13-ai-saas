@@ -5,7 +5,7 @@ import { toast } from "react-hot-toast";
 import axios from "axios";
 import { useRouter } from "next/navigation";
 import { Car, Users } from "lucide-react";
-import MultiStep from "react-multistep";
+import { Tweet } from "react-twitter-widgets";
 
 import { Heading } from "@/components/heading";
 import { useProModal } from "@/hooks/use-pro-modal";
@@ -27,6 +27,8 @@ import AddSource from "./addsource";
 import ApplyFilter from "./applyfilter";
 import PreviewSource from "./preview";
 import { Label } from "@radix-ui/react-label";
+import { any } from "zod";
+import UserDetailsTable from "./userstable";
 
 const steps = [
   { title: "StepOne", component: <StepOne /> },
@@ -40,10 +42,8 @@ const AudiencePage = () => {
   const router = useRouter();
 
   const [tweetUrl, setTweetUrl] = useState("");
-  const [userName, setUserName] = useState("");
-  const [name, setName] = useState("");
-
-  const [step, setStep] = useState(0);
+  const [tweetId, setTweetId] = useState("");
+  const [usersData, setUsersData] = useState([]);
 
   const handleTweetUrlChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>
@@ -52,20 +52,55 @@ const AudiencePage = () => {
     setTweetUrl(value);
   };
 
-  const handleNextClick = () => {
-    setStep(step + 1);
+  const handleNextClick = async (e: React.FormEvent) => {
+    e.preventDefault();
+
+    try {
+      const response = await axios.get("/api/twitterlikes", {
+        params: {
+          tweetUrl: tweetUrl,
+        },
+      });
+      const data = response.data;
+      console.log(data);
+      const ids = data.likes.data.map((d: any) => d.id);
+      try {
+        const response = await axios.get("/api/twitterusers", {
+          params: {
+            ids: ids.toString(),
+          },
+        });
+        const data = response.data.likes.data;
+        console.log(data);
+        setUsersData(data);
+      } catch (error: any) {
+        if (error?.response?.status === 403) {
+          proModal.onOpen();
+        } else {
+          toast.error("Something went wrong.");
+        }
+      }
+    } catch (error: any) {
+      if (error?.response?.status === 403) {
+        proModal.onOpen();
+      } else {
+        toast.error("Something went wrong.");
+      }
+    }
   };
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
 
     try {
-      const response = await axios.get("/api/twitter", {
+      const response = await axios.get("/api/twitterauthor", {
         params: {
           tweetUrl: tweetUrl,
         },
       });
-      console.log(response.data.likes.data);
+      const data = response.data.data.data;
+      console.log(data);
+      setTweetId(data.id);
     } catch (error: any) {
       if (error?.response?.status === 403) {
         proModal.onOpen();
@@ -99,32 +134,52 @@ const AudiencePage = () => {
         iconColor="text-emerald-500"
         bgColor="bg-emerald-500/10"
       />
-      <Card mx="4">
-        <Flex direction="column">
-          <Grid columns="1" gap="3" width="100%">
-            <Container ml="5">
-              <Label>Add tweet link</Label>
-              <Flex gap="3">
-                <Flex direction="column" gap="3">
-                  <TextField.Input
-                    variant="soft"
-                    radius="large"
-                    size="3"
-                    style={{ width: 400 }}
-                    color="gray"
-                    value={tweetUrl}
-                    onChange={handleTweetUrlChange}
-                    placeholder="https://twitter.com/user/status/1234"
-                  />
+      {usersData.length == 0 && (
+        <Card mx="4">
+          <Flex direction="column">
+            <Grid columns="1" gap="3" width="100%">
+              <Container ml="5">
+                <Label>Add tweet link</Label>
+                <Flex gap="3">
+                  <Flex direction="column" gap="3">
+                    <TextField.Input
+                      variant="soft"
+                      radius="large"
+                      size="3"
+                      style={{ width: 400 }}
+                      color="gray"
+                      value={tweetUrl}
+                      onChange={handleTweetUrlChange}
+                      placeholder="https://twitter.com/user/status/1234"
+                    />
+                  </Flex>
                 </Flex>
+              </Container>
+            </Grid>
+            <Button my="5" ml="5" style={{ width: 120 }} onClick={handleSubmit}>
+              Submit
+            </Button>
+            {tweetId.length > 0 && (
+              <Flex direction="column" gap="3" my="4">
+                <Tweet tweetId={tweetId} />
+                <Button
+                  my="5"
+                  ml="5"
+                  style={{ width: 120 }}
+                  onClick={handleNextClick}
+                >
+                  Next
+                </Button>
               </Flex>
-            </Container>
-          </Grid>
-          <Button my="5" ml="5" style={{ width: 120 }} onClick={handleSubmit}>
-            Next
-          </Button>
-        </Flex>
-      </Card>
+            )}
+          </Flex>
+        </Card>
+      )}
+      {usersData.length > 0 && (
+        <Card m="4">
+          <UserDetailsTable data={usersData} />
+        </Card>
+      )}
     </Container>
   );
 };
