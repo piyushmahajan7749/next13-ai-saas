@@ -65,7 +65,7 @@ const AudiencePage = () => {
           tweetUrl: tweetUrl,
         },
       });
-      console.log(response.data.username);
+      console.log(response.data.likes.data);
     } catch (error: any) {
       if (error?.response?.status === 403) {
         proModal.onOpen();
