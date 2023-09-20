@@ -38,13 +38,13 @@ const routes = [
     label: "Automation",
     icon: Timer,
     color: "text-pink-700",
-    href: "/campaign",
+    href: "/automation",
   },
   {
     label: "Messages",
     icon: MessageCircle,
     color: "text-orange-700",
-    href: "/leads",
+    href: "/messages",
   },
   {
     label: "Settings",

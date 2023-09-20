@@ -7,7 +7,7 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 import { toast } from "react-hot-toast";
 import { useRouter } from "next/navigation";
-import { Users, Send } from "lucide-react";
+import { Users, Send, MessageCircle } from "lucide-react";
 
 import { Heading } from "@/components/heading";
 import { Button } from "@/components/ui/button";
@@ -28,7 +28,7 @@ const CampaignPage = () => {
     resolver: zodResolver(formSchema),
     defaultValues: {
       prompt: "",
-    }
+    },
   });
 
   const isLoading = form.formState.isSubmitting;
@@ -37,8 +37,8 @@ const CampaignPage = () => {
     try {
       setMusic(undefined);
 
-      const response = await axios.post('/api/music', values);
-      console.log(response)
+      const response = await axios.post("/api/music", values);
+      console.log(response);
 
       setMusic(response.data.audio);
       form.reset();
@@ -51,21 +51,21 @@ const CampaignPage = () => {
     } finally {
       router.refresh();
     }
-  }
+  };
 
-  return ( 
+  return (
     <div>
       <Heading
-        title="Campaigns"
-        description="Start lead generation campaigns"
-        icon={Users}
+        title="Messages"
+        description="Setup your outgoing messages"
+        icon={MessageCircle}
         iconColor="text-emerald-500"
         bgColor="bg-emerald-500/10"
       />
       <div className="px-4 lg:px-8">
         <Form {...form}>
-          <form 
-            onSubmit={form.handleSubmit(onSubmit)} 
+          <form
+            onSubmit={form.handleSubmit(onSubmit)}
             className="
               rounded-lg 
               border 
@@ -86,15 +86,20 @@ const CampaignPage = () => {
                   <FormControl className="m-0 p-0">
                     <Input
                       className="border-0 outline-none focus-visible:ring-0 focus-visible:ring-transparent"
-                      disabled={isLoading} 
-                      placeholder="Campaigns" 
+                      disabled={isLoading}
+                      placeholder="Campaigns"
                       {...field}
                     />
                   </FormControl>
                 </FormItem>
               )}
             />
-            <Button className="col-span-12 lg:col-span-2 w-full" type="submit" disabled={isLoading} size="icon">
+            <Button
+              className="col-span-12 lg:col-span-2 w-full"
+              type="submit"
+              disabled={isLoading}
+              size="icon"
+            >
               Start new
             </Button>
           </form>
@@ -104,9 +109,7 @@ const CampaignPage = () => {
             <Loader />
           </div>
         )}
-        {!music && !isLoading && (
-          <Empty label="No campaigns started." />
-        )}
+        {!music && !isLoading && <Empty label="No campaigns started." />}
         {music && (
           <audio controls className="w-full mt-8">
             <source src={music} />
@@ -114,7 +117,7 @@ const CampaignPage = () => {
         )}
       </div>
     </div>
-   );
-}
- 
+  );
+};
+
 export default CampaignPage;

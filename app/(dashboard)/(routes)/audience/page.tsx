@@ -135,17 +135,20 @@ const AudiencePage = () => {
         bgColor="bg-emerald-500/10"
       />
       {usersData.length == 0 && (
-        <Card mx="4">
+        <Card mx="4" className="card-elevation">
           <Flex direction="column">
             <Grid columns="1" gap="3" width="100%">
               <Container ml="5">
-                <Label>Add tweet link</Label>
+                <Label>
+                  <b>Add tweet link</b>
+                </Label>
                 <Flex gap="3">
                   <Flex direction="column" gap="3">
                     <TextField.Input
                       variant="soft"
                       radius="large"
                       size="3"
+                      my="4"
                       style={{ width: 400 }}
                       color="gray"
                       value={tweetUrl}
@@ -156,7 +159,7 @@ const AudiencePage = () => {
                 </Flex>
               </Container>
             </Grid>
-            <Button my="5" ml="5" style={{ width: 120 }} onClick={handleSubmit}>
+            <Button my="5" ml="4" style={{ width: 120 }} onClick={handleSubmit}>
               Submit
             </Button>
             {tweetId.length > 0 && (
@@ -164,7 +167,7 @@ const AudiencePage = () => {
                 <Tweet tweetId={tweetId} />
                 <Button
                   my="5"
-                  ml="5"
+                  ml="4"
                   style={{ width: 120 }}
                   onClick={handleNextClick}
                 >
