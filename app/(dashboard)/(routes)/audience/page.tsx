@@ -21,21 +21,11 @@ import {
   Text,
   TextField,
 } from "@radix-ui/themes";
-import StepOne from "./addsource";
-import StepTwo from "./steptwo";
 import AddSource from "./addsource";
 import ApplyFilter from "./applyfilter";
 import PreviewSource from "./preview";
 import { Label } from "@radix-ui/react-label";
-import { any } from "zod";
 import UserDetailsTable from "./userstable";
-
-const steps = [
-  { title: "StepOne", component: <StepOne /> },
-  { title: "StepTwo", component: <StepTwo /> },
-  { title: "StepThree", component: <StepOne /> },
-  { title: "StepFour", component: <StepOne /> },
-];
 
 const AudiencePage = () => {
   const proModal = useProModal();
@@ -109,19 +99,6 @@ const AudiencePage = () => {
       }
     } finally {
       router.refresh();
-    }
-  };
-
-  const getComponentFromStep = (currStep: Number) => {
-    switch (currStep) {
-      case 0:
-        return <AddSource />;
-      case 1:
-        return <ApplyFilter />;
-      case 2:
-        return <PreviewSource />;
-      default:
-        return <AddSource />;
     }
   };
 

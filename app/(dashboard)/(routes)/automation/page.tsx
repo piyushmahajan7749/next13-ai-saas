@@ -1,7 +1,6 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { useRouter } from "next/navigation";
 import { LucideBadgeDollarSign, Send } from "lucide-react";
 
 import { Heading } from "@/components/heading";
@@ -13,20 +12,19 @@ import { db } from "@/app/api/firebase/firebase";
 import { Box, Card, Container, Flex, Grid } from "@radix-ui/themes";
 import { Label } from "@radix-ui/react-label";
 import ConfigureMessage from "../configuremessage/page";
+import { Audience } from "./constants";
 
 const AutomationsPage = () => {
-  const router = useRouter();
-
-  const [audiences, setAudiences] = useState([]);
-  const [selectedAudience, setSelectedAudience] = useState(null);
-  const [selectedCardIndex, setSelectedCardIndex] = useState(null);
+  const [audiences, setAudiences] = useState<Audience[]>([]);
+  const [selectedAudience, setSelectedAudience] = useState<Audience>();
+  const [selectedCardIndex, setSelectedCardIndex] = useState(-1);
   const [showMessage, setShowMessage] = useState(false);
 
   const handleAudienceClick = async (e: React.FormEvent) => {
     e.preventDefault();
     const idx = e.currentTarget.getAttribute("data-id");
     setSelectedAudience(audiences[parseInt(idx || "-1")]);
-    setSelectedCardIndex(idx);
+    setSelectedCardIndex(parseInt(idx || "-1"));
   };
 
   const onSubmit = async (e: React.FormEvent) => {
@@ -38,8 +36,8 @@ const AutomationsPage = () => {
   useEffect(() => {
     const fetchAudiences = async () => {
       await getDocs(collection(db, "audiences")).then((querySnapshot) => {
-        const newData = querySnapshot.docs.map((doc) => ({
-          ...doc.data(),
+        const newData: Audience[] = querySnapshot.docs.map((doc) => ({
+          ...(doc.data() as Omit<Audience, "id">), // Cast the data to omit the 'id' field
           id: doc.id,
         }));
         setAudiences(newData);
@@ -73,9 +71,7 @@ const AutomationsPage = () => {
                       color: "#333",
                       cursor: "pointer",
                       backgroundColor:
-                        selectedCardIndex === index.toString()
-                          ? "lightblue"
-                          : "white",
+                        selectedCardIndex === index ? "lightblue" : "white",
                     }}
                     className="card-elevation"
                     my="4"
