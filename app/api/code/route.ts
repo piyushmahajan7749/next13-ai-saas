@@ -1,12 +1,8 @@
-import { auth } from "@clerk/nextjs";
 import { NextResponse } from "next/server";
 import { ChatCompletionRequestMessage, Configuration, OpenAIApi } from "openai";
 
-import { checkSubscription } from "@/lib/subscription";
-import { incrementApiLimit, checkApiLimit } from "@/lib/api-limit";
-
 const configuration = new Configuration({
-  apiKey: "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",
+  apiKey: process.env.OPENAI_API_KEY,
 });
 
 const openai = new OpenAIApi(configuration);
