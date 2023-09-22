@@ -48,12 +48,6 @@ const routes = [
     href: "/leads",
   },
   {
-    label: "Interview insights",
-    icon: TestTube2Icon,
-    color: "text-zinc-500",
-    href: "/audience",
-  },
-  {
     label: "Settings",
     icon: Settings,
     href: "/settings",

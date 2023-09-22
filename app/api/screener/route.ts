@@ -39,7 +39,7 @@ export async function POST(req: Request) {
     // }
 
     const response = await openai.createChatCompletion({
-      model: "ft:gpt-3.5-turbo-0613:personal::7ymAwQbK",
+      model: "ft:gpt-3.5-turbo-0613:personal::81LK9ezU",
       messages: [instructionMessage, messages],
     });
 

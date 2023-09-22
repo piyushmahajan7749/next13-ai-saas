@@ -90,13 +90,7 @@ const AudiencePage = () => {
     },
     {
       title: "Screener",
-      component: (
-        <ScreenerResults
-          formData={formData}
-          setFormData={setFormData}
-          setActiveStep={goToNextStep}
-        />
-      ),
+      component: <ScreenerResults formData={formData} messages={messages} />,
     },
   ];
 
