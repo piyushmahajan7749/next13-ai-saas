@@ -4,26 +4,20 @@ import { useState } from "react";
 import { toast } from "react-hot-toast";
 import axios from "axios";
 import { useRouter } from "next/navigation";
-import { Car, Users } from "lucide-react";
+import { Users } from "lucide-react";
 import { Tweet } from "react-twitter-widgets";
 
 import { Heading } from "@/components/heading";
 import { useProModal } from "@/hooks/use-pro-modal";
 
 import {
-  Badge,
-  Box,
   Button,
   Card,
   Container,
   Flex,
   Grid,
-  Text,
   TextField,
 } from "@radix-ui/themes";
-import AddSource from "./addsource";
-import ApplyFilter from "./applyfilter";
-import PreviewSource from "./preview";
 import { Label } from "@radix-ui/react-label";
 import UserDetailsTable from "./userstable";
 
