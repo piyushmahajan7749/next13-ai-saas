@@ -73,8 +73,8 @@ const AudiencePage = () => {
   return (
     <Container size="4">
       <Heading
-        title="Superfan screener"
-        description="Create a screener to recruit users for your research"
+        title="Create Audience"
+        description="Create a new audience for your campaigns"
         icon={Users}
         iconColor="text-emerald-500"
         bgColor="bg-emerald-500/10"

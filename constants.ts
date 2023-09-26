@@ -4,6 +4,7 @@ import {
   Users,
   MessageSquare,
   MessageCircle,
+  Timer,
 } from "lucide-react";
 
 export const MAX_FREE_COUNTS = 5;
@@ -18,7 +19,7 @@ export const tools = [
   },
   {
     label: "Automation",
-    icon: BarChart2,
+    icon: Timer,
     href: "/automation",
     color: "text-violet-500",
     bgColor: "bg-violet-500/10",
