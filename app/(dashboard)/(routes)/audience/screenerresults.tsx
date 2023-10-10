@@ -1,11 +1,8 @@
 "use client";
 
-import { BotAvatar } from "@/components/bot-avatar";
-import { UserAvatar } from "@/components/user-avatar";
 import { cn } from "@/lib/utils";
 import { Label } from "@radix-ui/react-label";
 import { Button, Callout, Card, Container, Flex } from "@radix-ui/themes";
-import { Box } from "lucide-react";
 import { useEffect, useState } from "react";
 
 const ScreenerResults: React.FC<{
@@ -17,33 +14,41 @@ const ScreenerResults: React.FC<{
     setContent(messages);
   }, [messages]);
 
+  function Question({ text, options }) {
+    return (
+      <div className="question">
+        <p>{text}</p>
+        <ul>
+          {options.map((option, index) => (
+            <li key={index}>{`${String.fromCharCode(
+              97 + index
+            )}. ${option}`}</li>
+          ))}
+        </ul>
+      </div>
+    );
+  }
+
   const parseSurveyQuestions = (text: string) => {
     // Split the text by numbers followed by a period to get each question.
-    const questions = text.split(/\d+\./).filter(Boolean);
+    const questionRegex = /\d+\.\s(.*?)(?=\d+\.\s|$)/gs;
+    const optionRegex = /\b[a-z]\.\s(.*?)(?=\b[a-z]\.\s|$)/gs;
 
-    return questions.map((question, index) => {
-      // Separate the question part and the options part
-      const [questionText, ...optionsText] = question.split(/\n-/);
-
-      // Create the options list if options are present
-      const options =
-        optionsText.length > 0 ? (
-          <ul>
-            {optionsText.map((option, i) => (
-              <li key={i}>{option.trim()}</li>
-            ))}
-          </ul>
-        ) : null;
-
-      return (
-        <div key={index} className="question">
-          <p>
-            <strong>{index + 1 + ". " + questionText.trim()}</strong>
-          </p>
-          {options}
-        </div>
-      );
-    });
+    const questions = [];
+    let questionMatch;
+    while ((questionMatch = questionRegex.exec(text))) {
+      const questionText = questionMatch[1];
+      const options = [];
+      let optionMatch;
+      while ((optionMatch = optionRegex.exec(questionText))) {
+        options.push(optionMatch[1]);
+      }
+      questions.push({
+        question: questionText.split(/\b[a-z]\.\s/)[0],
+        options,
+      });
+    }
+    return questions;
   };
 
   return (
@@ -64,7 +69,15 @@ const ScreenerResults: React.FC<{
             )}
           >
             <div className="survey-container">
-              {parseSurveyQuestions(question.content || "")}
+              {parseSurveyQuestions(question.content || "").map(
+                (item, index) => (
+                  <Question
+                    key={index}
+                    text={`${index + 1}. ${item.question}`}
+                    options={item.options}
+                  />
+                )
+              )}
             </div>
           </div>
         ))}

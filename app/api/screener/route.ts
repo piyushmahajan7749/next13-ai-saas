@@ -2,7 +2,7 @@ import { NextResponse } from "next/server";
 import { ChatCompletionRequestMessage, Configuration, OpenAIApi } from "openai";
 
 const configuration = new Configuration({
-  apiKey: process.env.OPENAI_API_KEY,
+  apiKey: "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",
 });
 
 const openai = new OpenAIApi(configuration);
@@ -10,7 +10,7 @@ const openai = new OpenAIApi(configuration);
 const instructionMessage: ChatCompletionRequestMessage = {
   role: "system",
   content:
-    "You are a User research expert. You are assigned a task to recruit users to research a product. Add numbers and extra line breaks for each question.",
+    "You are a User research expert. You are assigned a task to recruit users to research a product.",
 };
 
 export async function POST(req: Request) {
@@ -39,7 +39,7 @@ export async function POST(req: Request) {
     // }
 
     const response = await openai.createChatCompletion({
-      model: "ft:gpt-3.5-turbo-0613:personal::81LK9ezU",
+      model: "ft:gpt-3.5-turbo-0613:personal::86VczqVd",
       messages: [instructionMessage, messages],
     });
 
