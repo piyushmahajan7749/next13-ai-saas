@@ -34,19 +34,19 @@ const Niche: React.FC<{
             <Box className="p-1">
               <Flex direction="column">
                 <Label className="mb-2 text-md">
-                  The beachhead is not the destination. When you're building
-                  something new, the best way to start is by targeting high-need
-                  early adopters.
+                  The beachhead is not the destination. When you&apos;re
+                  building something new, the best way to start is by targeting
+                  high-need early adopters.
                 </Label>
                 <Label className="mb-4 text-md">
-                  Closer to shipping, you'll expand to a broader audience & grow
-                  your TAM.
+                  Closer to shipping, you&apos;ll expand to a broader audience &
+                  grow your TAM.
                 </Label>
                 <Label className="mb-2">
                   <b>Think big. </b>
                   <i>
-                    What's your total addressable market (TAM)? AKA large future
-                    market
+                    What&apos;s your total addressable market (TAM)? AKA large
+                    future market
                   </i>
                 </Label>
                 <TextField.Input

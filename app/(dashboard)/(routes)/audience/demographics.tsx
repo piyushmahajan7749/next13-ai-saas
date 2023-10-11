@@ -39,17 +39,19 @@ const Demographics: React.FC<{
                       ELEVATOR PITCH
                     </Label>
                     <Label className="mb-2 text-md">
-                      We're building a {formData.solution} for {formData.niche}{" "}
-                      so they can {formData.outcome}
+                      {`We're building a ${formData.solution} for ${formData.niche}
+                      so they can ${formData.outcome}`}
                     </Label>
                   </Flex>
                 </Card>
                 <Label className="mb-4 text-md italic">
-                  Now that your Elevator Pitch is in place, let's define
+                  {`Now that your Elevator Pitch is in place, let's define
                   recruiting parameters for your hi-need beachhead niche. Let's
-                  start with basic demographics.
+                  start with basic demographics.`}
                 </Label>
-                <Label className="mb-2 mt-2 font-bold">We're recruiting</Label>
+                <Label className="mb-2 mt-2 font-bold">
+                  We&apos;re recruiting
+                </Label>
                 <TextField.Input
                   name="demographics"
                   value={formData.demographics}

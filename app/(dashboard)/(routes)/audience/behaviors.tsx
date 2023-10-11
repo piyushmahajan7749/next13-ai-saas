@@ -39,15 +39,15 @@ const Behaviors: React.FC<{
                       RECRUITING DEMOGRAPHICS
                     </Label>
                     <Label className="mb-2 text-md">
-                      We're looking for {formData.demographics},{" "}
-                      {formData.agerange} in {formData.location}
+                      {`We're looking for ${formData.demographics},
+                      ${formData.agerange} in ${formData.location}`}
                     </Label>
                   </Flex>
                 </Card>
                 <Label className="mb-4 text-md italic">
-                  Now that we've defined our demographics, let's articulate the
+                  {`Now that we've defined our demographics, let's articulate the
                   qualifying activity, interest, problem, or issue shared by our
-                  Niche - and the outcomes they're looking for.
+                  Niche - and the outcomes they're looking for.`}
                 </Label>
                 <Label className="mb-2 mt-4 font-bold">who</Label>
                 <TextField.Input

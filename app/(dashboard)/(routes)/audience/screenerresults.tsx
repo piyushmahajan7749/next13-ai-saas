@@ -5,6 +5,11 @@ import { Label } from "@radix-ui/react-label";
 import { Button, Callout, Card, Container, Flex } from "@radix-ui/themes";
 import { useEffect, useState } from "react";
 
+interface QuestionProps {
+  text: string;
+  options: string[]; // or whatever type your options should be
+}
+
 const ScreenerResults: React.FC<{
   formData: any;
   messages: any;
@@ -14,7 +19,7 @@ const ScreenerResults: React.FC<{
     setContent(messages);
   }, [messages]);
 
-  function Question({ text, options }) {
+  function Question({ text, options }: QuestionProps) {
     return (
       <div className="question">
         <p>{text}</p>

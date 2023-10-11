@@ -2,7 +2,7 @@ import { NextResponse } from "next/server";
 import { ChatCompletionRequestMessage, Configuration, OpenAIApi } from "openai";
 
 const configuration = new Configuration({
-  apiKey: "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",
+  apiKey: "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",
 });
 
 const openai = new OpenAIApi(configuration);

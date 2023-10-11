@@ -34,14 +34,15 @@ const ElevatorPitch: React.FC<{
             <Box className="p-1">
               <Flex direction="column">
                 <Label className="mb-2 text-md italic">
-                  Now that you've defined your hi-need Niche, write an Elevator
-                  Pitch connecting your solution with their needs & desires.
+                  {`Now that you've defined your hi-need Niche, write an Elevator
+                  Pitch connecting your solution with their needs & desires.`}
                 </Label>
                 <Label className="mb-6 text-md italic">
                   Think of this as your <b>initial hypothesis</b> - something
-                  you can test & modify as you learn what does & doesn't work.
+                  you can test & modify as you learn what does & doesn&apos;t
+                  work.
                 </Label>
-                <Label className="mb-2 font-bold">We're building a</Label>
+                <Label className="mb-2 font-bold">We&apos;re building a</Label>
                 <TextField.Input
                   name="solution"
                   value={formData.solution}

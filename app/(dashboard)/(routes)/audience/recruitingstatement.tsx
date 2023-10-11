@@ -87,9 +87,9 @@ const RecruitingStatement: React.FC<{
                   </Card>
                 )}
                 <Label className="my-6 text-md italic">
-                  Take a look at your statement. Is that who you're looking for?
-                  Edit the statement if you want to make changes. When you're
-                  done editing, go ahead & generate a screener.
+                  Take a look at your statement. Is that who you&apos;re looking
+                  for? Edit the statement if you want to make changes. When
+                  you&apos;re done editing, go ahead & generate a screener.
                 </Label>
                 {isLoading ? (
                   <div className="p-8 rounded-lg w-full flex items-center justify-center bg-muted">
