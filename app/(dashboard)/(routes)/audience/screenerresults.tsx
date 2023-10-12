@@ -1,8 +1,10 @@
-"use client";
+// Assuming "use client" is a comment
+// use client;
 
 import { cn } from "@/lib/utils";
 import { Label } from "@radix-ui/react-label";
 import { Button, Callout, Card, Container, Flex } from "@radix-ui/themes";
+import { ChatCompletionRequestMessage } from "openai";
 import { useEffect, useState } from "react";
 
 interface QuestionProps {
@@ -10,16 +12,34 @@ interface QuestionProps {
   options: string[]; // or whatever type your options should be
 }
 
-const ScreenerResults: React.FC<{
-  formData: any;
-  messages: any;
-}> = ({ formData, messages }) => {
-  const [screenerContent, setContent] = useState([]);
+interface FormData {
+  // ...define the shape of formData
+}
+
+interface Message {
+  content: string;
+  role: string;
+  // ...any other fields
+}
+
+interface ScreenerResultsProps {
+  formData: FormData;
+  messages: ChatCompletionRequestMessage[];
+}
+
+const ScreenerResults: React.FC<ScreenerResultsProps> = ({
+  formData,
+  messages,
+}) => {
+  const [screenerContent, setContent] = useState<
+    ChatCompletionRequestMessage[]
+  >([]);
+
   useEffect(() => {
     setContent(messages);
   }, [messages]);
 
-  function Question({ text, options }: QuestionProps) {
+  function Question({ text, options }: QuestionProps): React.ReactElement {
     return (
       <div className="question">
         <p>{text}</p>
@@ -34,7 +54,9 @@ const ScreenerResults: React.FC<{
     );
   }
 
-  const parseSurveyQuestions = (text: string) => {
+  const parseSurveyQuestions = (
+    text: string
+  ): { question: string; options: string[] }[] => {
     // Split the text by numbers followed by a period to get each question.
     const questionRegex = /\d+\.\s(.*?)(?=\d+\.\s|$)/gs;
     const optionRegex = /\b[a-z]\.\s(.*?)(?=\b[a-z]\.\s|$)/gs;
@@ -62,7 +84,7 @@ const ScreenerResults: React.FC<{
         <b>Screener questions: </b>
       </Label>
       {screenerContent
-        .filter((question) => question.role != "user")
+        .filter((question) => question.role !== "user")
         .map((question) => (
           <div
             key={question.content}
@@ -74,15 +96,15 @@ const ScreenerResults: React.FC<{
             )}
           >
             <div className="survey-container">
-              {parseSurveyQuestions(question.content || "").map(
-                (item, index) => (
-                  <Question
-                    key={index}
-                    text={`${index + 1}. ${item.question}`}
-                    options={item.options}
-                  />
-                )
-              )}
+              {parseSurveyQuestions(
+                question.content ? question.content : ""
+              ).map((item, index) => (
+                <Question
+                  key={index}
+                  text={`${index + 1}. ${item.question}`}
+                  options={item.options}
+                />
+              ))}
             </div>
           </div>
         ))}
