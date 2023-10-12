@@ -1,4 +1,5 @@
 import { userPrompt } from "@/app/constants/strings";
+import Image from "next/image";
 import { Loader } from "@/components/loader";
 import { Label } from "@radix-ui/react-label";
 import {
@@ -115,10 +116,15 @@ const RecruitingStatement: React.FC<{
             </Box>
           </Container>
         </Flex>
-        <Flex direction="column" className="w-1/2">
-          <Card m="6">
-            <YouTube videoId="1jVp6aRftR8" />
-          </Card>
+
+        <Flex direction="column" className="w-1/2 justify-center items-center">
+          <Image
+            alt="Recruiting statement"
+            src="/statement.jpg"
+            width={440}
+            height={440}
+            className="rounded-lg"
+          />
         </Flex>
       </Flex>
     </Card>

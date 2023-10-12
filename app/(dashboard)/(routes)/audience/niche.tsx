@@ -1,4 +1,5 @@
 import { Label } from "@radix-ui/react-label";
+import Image from "next/image";
 import {
   Box,
   Button,
@@ -9,7 +10,6 @@ import {
   TextField,
 } from "@radix-ui/themes";
 import React, { useState } from "react";
-import YouTube from "react-youtube";
 
 const Niche: React.FC<{
   formData: any;
@@ -82,10 +82,14 @@ const Niche: React.FC<{
             </Box>
           </Container>
         </Flex>
-        <Flex direction="column" className="w-1/2">
-          <Card m="6">
-            <YouTube videoId="1jVp6aRftR8" />
-          </Card>
+        <Flex direction="column" className="w-1/2 justify-center items-center">
+          <Image
+            alt="niche"
+            src="/niche.jpg"
+            width={440}
+            height={440}
+            className="rounded-lg"
+          />
         </Flex>
       </Flex>
     </Card>
