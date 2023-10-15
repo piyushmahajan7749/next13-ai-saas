@@ -10,7 +10,7 @@ import {
   TextField,
 } from "@radix-ui/themes";
 import React, { useState } from "react";
-import YouTube from "react-youtube";
+import toast from "react-hot-toast";
 
 const Behaviors: React.FC<{
   formData: any;
@@ -22,9 +22,16 @@ const Behaviors: React.FC<{
     setFormData((prevState: any) => ({ ...prevState, [name]: value }));
   };
   const handleNext = () => {
-    const stmnt = `We're recruiting ${formData.demographics}, ${formData.agerange} in ${formData.location} who ${formData.behavior}, searching for ${formData.outcome} to help us test ${formData.solution}`;
-    setFormData((prevState: any) => ({ ...prevState, statement: stmnt }));
-    setActiveStep(4);
+    const isEdited =
+      formData.qualifyingActivity.length > 1 && formData.behavior.length > 1;
+    if (isEdited) {
+      const stmnt = `We're recruiting ${formData.demographics}, ${formData.agerange} in ${formData.location} who ${formData.behavior}, searching for ${formData.outcome} to help us test ${formData.solution}`;
+      setFormData((prevState: any) => ({ ...prevState, statement: stmnt }));
+      setActiveStep(4);
+    } else
+      toast.error("Please fill all the details to continue", {
+        position: "bottom-center",
+      });
   };
 
   return (

@@ -124,7 +124,6 @@ const ScreenerResults: React.FC<{
         messages: [...formData.messages, userMessage, response.data],
       }));
       setLoading(false);
-      setActiveStep(7);
     } catch (error: any) {
       toast.error("Something went wrong.");
     } finally {
@@ -145,7 +144,7 @@ const ScreenerResults: React.FC<{
               style={{ width: 160 }}
               className="px-6 py-2 mr-4 border-2 rounded-md shadow-md"
             >
-              Re-generate
+              Generate more
             </Button>
             <Button
               style={{ width: 120 }}

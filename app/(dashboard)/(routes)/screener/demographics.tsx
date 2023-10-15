@@ -11,6 +11,7 @@ import {
 } from "@radix-ui/themes";
 import React, { useState } from "react";
 import YouTube from "react-youtube";
+import toast from "react-hot-toast";
 
 const Demographics: React.FC<{
   formData: any;
@@ -22,6 +23,18 @@ const Demographics: React.FC<{
     setFormData((prevState: any) => ({ ...prevState, [name]: value }));
   };
 
+  const handleNext = () => {
+    const isEdited =
+      formData.demographics.length > 1 &&
+      formData.agerange.length > 1 &&
+      formData.location.length > 1;
+    if (isEdited) setActiveStep(3);
+    else
+      toast.error("Please fill all the details to continue", {
+        position: "bottom-center",
+      });
+  };
+
   return (
     <Card mb="8">
       <Card className="bg-teal-200 px-2 rounded-md mx-4 my-2">
@@ -29,7 +42,7 @@ const Demographics: React.FC<{
           <p className="text-lg font-bold">3. Demographics</p>
           <Flex>
             <Button
-              onClick={setActiveStep}
+              onClick={handleNext}
               style={{ width: 120 }}
               className="px-6 py-2 border-2 mr-4 rounded-md shadow-md"
             >

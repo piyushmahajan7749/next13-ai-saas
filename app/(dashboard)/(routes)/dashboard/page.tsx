@@ -29,7 +29,7 @@ export default function HomePage() {
 
     try {
       const docRef = await addDoc(collection(db, "projects"), {
-        name: projectName, // Save the audience name
+        name: projectName,
       });
       setLoading(false);
       setLoading(true);
@@ -38,6 +38,9 @@ export default function HomePage() {
           ...(doc.data() as Omit<Project, "id">), // Cast the data to omit the 'id' field
           id: doc.id,
         }));
+        // const filteredData: Project[] = newData.filter(
+        //   (doc) => doc.userId === userId
+        // );
         setProjects(newData);
         setLoading(false);
       });
