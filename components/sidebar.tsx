@@ -35,7 +35,7 @@ const routes = [
   {
     label: "Superfan Screener",
     icon: Users,
-    href: "/audience",
+    href: "/screener",
     color: "text-violet-500",
   },
   {

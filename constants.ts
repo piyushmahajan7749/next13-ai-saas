@@ -17,7 +17,7 @@ export const tools = [
   {
     label: "Superfan Screener",
     icon: Users,
-    href: "/audience",
+    href: "/screener",
     color: "text-emerald-500",
     bgColor: "bg-emerald-500/10",
   },
