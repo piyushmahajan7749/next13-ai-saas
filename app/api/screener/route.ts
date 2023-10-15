@@ -2,8 +2,10 @@ import { NextResponse } from "next/server";
 import { ChatCompletionRequestMessage, Configuration, OpenAIApi } from "openai";
 
 const configuration = new Configuration({
-  apiKey: "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",
+  apiKey: `${process.env.OPENAI_KEY}`,
 });
+
+console.log("openai key:", process.env.OPENAI_KEY);
 
 const openai = new OpenAIApi(configuration);
 

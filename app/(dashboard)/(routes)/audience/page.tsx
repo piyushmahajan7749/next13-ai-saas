@@ -15,6 +15,7 @@ import Demographics from "./demographics";
 import Behaviors from "./behaviors";
 import RecruitingStatement from "./recruitingstatement";
 import { ChatCompletionRequestMessage } from "openai";
+import NextSteps from "./nextsteps";
 
 const AudiencePage = () => {
   const [activeStep, setActiveStep] = useState(0); // 0-based index
@@ -31,6 +32,7 @@ const AudiencePage = () => {
     qualifyingActivity: "",
     behavior: "",
     statement: "",
+    messages: messages,
   });
 
   const goToNextStep = (newStep: number) => {
@@ -83,6 +85,7 @@ const AudiencePage = () => {
       component: (
         <RecruitingStatement
           formData={formData}
+          setFormData={setFormData}
           setMessages={setMessages}
           setActiveStep={() => goToNextStep(5)}
         />
@@ -90,7 +93,14 @@ const AudiencePage = () => {
     },
     {
       title: "Screener",
-      component: <ScreenerResults formData={formData} messages={messages} />,
+      component: (
+        <ScreenerResults
+          formData={formData}
+          setFormData={setFormData}
+          setMessages={setMessages}
+          setActiveStep={() => goToNextStep(6)}
+        />
+      ),
     },
   ];
 

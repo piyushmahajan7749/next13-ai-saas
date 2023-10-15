@@ -10,26 +10,25 @@ import {
   Container,
   Flex,
   TextArea,
-  TextField,
 } from "@radix-ui/themes";
 import axios from "axios";
-import { useRouter } from "next/router";
 import { ChatCompletionRequestMessage } from "openai";
 import React, { useState } from "react";
 import toast from "react-hot-toast";
-import YouTube from "react-youtube";
 
 const RecruitingStatement: React.FC<{
   formData: any;
   setMessages: (value: any) => void;
+  setFormData: (value: any) => void;
   setActiveStep: (value: any) => void;
-}> = ({ formData, setMessages, setActiveStep }) => {
-  const stmnt = `We're recruiting ${formData.demographics}, ${formData.agerange} in ${formData.location} who ${formData.behavior}, searching for ${formData.outcome} to help us test ${formData.solution}`;
+}> = ({ formData, setMessages, setFormData, setActiveStep }) => {
   const [isEditing, setIsEditing] = useState(false);
   const [isLoading, setLoading] = useState(false);
-  const [prompt, setPrompt] = useState(stmnt || "");
+  const [prompt, setPrompt] = useState(formData.statement || "");
 
   const handleEditClick = () => {
+    if (isEditing)
+      setFormData((prevState: any) => ({ ...prevState, statement: prompt }));
     setIsEditing(!isEditing);
   };
 
@@ -49,7 +48,10 @@ const RecruitingStatement: React.FC<{
         messages: userMessage,
       });
 
-      setMessages((current: any) => [...current, userMessage, response.data]);
+      setFormData((prevState: any) => ({
+        ...prevState,
+        messages: [userMessage, response.data],
+      }));
       setLoading(false);
       setActiveStep(6);
     } catch (error: any) {
@@ -61,11 +63,20 @@ const RecruitingStatement: React.FC<{
 
   return (
     <Card mb="8">
-      <Callout.Root className="mx-4 my-4">
-        <Callout.Text className="text-6xl font-bold">
-          5. Recruiting Statement
-        </Callout.Text>
-      </Callout.Root>
+      <Card className="bg-teal-200 px-2 rounded-md mx-4 my-2">
+        <Flex className="justify-between items-center">
+          <p className="text-lg font-bold">5. Recruiting Statement</p>
+          <Flex>
+            <Button
+              onClick={handleGenerate}
+              style={{ width: 120 }}
+              className="px-6 py-2 border-2 mr-4 rounded-md shadow-md"
+            >
+              Next
+            </Button>
+          </Flex>
+        </Flex>
+      </Card>
       <Flex>
         <Flex direction="column" className="w-1/2">
           <Container ml="5" mt="6">
@@ -103,12 +114,6 @@ const RecruitingStatement: React.FC<{
                       className="px-4 py-6 bg-blue-500 mr-4 mt-10  mb-4 text-white rounded-md w-1/3"
                     >
                       {!isEditing ? "Edit Statement" : "Save"}
-                    </Button>
-                    <Button
-                      onClick={handleGenerate}
-                      className="px-4 py-6 bg-blue-500 mt-10  mb-4 text-white rounded-md w-1/3"
-                    >
-                      Generate Screener
                     </Button>
                   </Flex>
                 )}

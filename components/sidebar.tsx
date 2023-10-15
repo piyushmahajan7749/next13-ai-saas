@@ -14,6 +14,9 @@ import {
   MessageCircle,
   Timer,
   Podcast,
+  Scroll,
+  Presentation,
+  Target,
 } from "lucide-react";
 import { usePathname } from "next/navigation";
 
@@ -36,16 +39,28 @@ const routes = [
     color: "text-violet-500",
   },
   {
-    label: "Automated Outreach",
-    icon: Timer,
+    label: "Habit Designer",
+    icon: Target,
     color: "text-pink-700",
-    href: "/campaign",
+    href: "/habit",
   },
   {
-    label: "Response insights",
-    icon: MessageCircle,
-    color: "text-orange-700",
-    href: "/leads",
+    label: "Storyboard Crafter",
+    icon: Presentation,
+    color: "text-zinc-700",
+    href: "/storyboard",
+  },
+  {
+    label: "Playtest Planner",
+    icon: LayoutDashboard,
+    color: "text-emerald-700",
+    href: "/playtest",
+  },
+  {
+    label: "Brief Builder",
+    icon: Scroll,
+    color: "text-green-700",
+    href: "/brief",
   },
   {
     label: "Settings",

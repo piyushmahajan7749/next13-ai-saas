@@ -21,20 +21,37 @@ const Behaviors: React.FC<{
     const { name, value } = e.target;
     setFormData((prevState: any) => ({ ...prevState, [name]: value }));
   };
+  const handleNext = () => {
+    const stmnt = `We're recruiting ${formData.demographics}, ${formData.agerange} in ${formData.location} who ${formData.behavior}, searching for ${formData.outcome} to help us test ${formData.solution}`;
+    setFormData((prevState: any) => ({ ...prevState, statement: stmnt }));
+    setActiveStep(4);
+  };
 
   return (
     <Card mb="8">
-      <Callout.Root className="mx-4 my-4">
-        <Callout.Text className="text-6xl font-bold">
-          4. Traits & Behaviors
-        </Callout.Text>
-      </Callout.Root>
+      <Card className="bg-teal-200 px-2 rounded-md mx-4 my-2">
+        <Flex className="justify-between items-center">
+          <p className="text-lg font-bold">4. Traits & Behaviors</p>
+          <Flex>
+            <Button
+              onClick={handleNext}
+              style={{ width: 120 }}
+              className="px-6 py-2 border-2 mr-4 rounded-md shadow-md"
+            >
+              Next
+            </Button>
+          </Flex>
+        </Flex>
+      </Card>
       <Flex>
         <Flex direction="column" className="w-1/2">
           <Container ml="5" mt="4">
             <Box className="p-1">
               <Flex direction="column">
-                <Card className="mb-6 p-2 text-md bg-green-500 shadow-md">
+                <Card
+                  variant="ghost"
+                  className="mb-6 mt-1 p-4 px-6 text-md font-semibold bg-blue-100 shadow-md"
+                >
                   <Flex direction="column">
                     <Label className="mb-2 text-sm font-semibold">
                       RECRUITING DEMOGRAPHICS
@@ -68,12 +85,6 @@ const Behaviors: React.FC<{
                   placeholder="solution-seeking behavior that demonstrates an urgent problem"
                   variant="surface"
                 />
-                <Button
-                  onClick={setActiveStep}
-                  className="px-4 py-6 bg-blue-500 mt-10  mb-4 text-white rounded-md w-1/4"
-                >
-                  Next
-                </Button>
               </Flex>
             </Box>
           </Container>
