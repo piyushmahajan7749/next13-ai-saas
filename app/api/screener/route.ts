@@ -30,24 +30,14 @@ export async function POST(req: Request) {
       return new NextResponse("Messages are required", { status: 400 });
     }
 
-    // const freeTrial = await checkApiLimit();
-    // const isPro = await checkSubscription();
-
-    // if (!freeTrial && !isPro) {
-    //   return new NextResponse(
-    //     "Free trial has expired. Please upgrade to pro.",
-    //     { status: 403 }
-    //   );
-    // }
-
     const response = await openai.createChatCompletion({
       model: "ft:gpt-3.5-turbo-0613:personal::86VczqVd",
       messages: [instructionMessage, messages],
     });
 
-    // if (!isPro) {
-    //   await incrementApiLimit();
-    // }
+    if (response.status !== 200) {
+      throw new Error(`Request failed with status ${response.status}`);
+    }
 
     return NextResponse.json(response.data.choices[0].message);
   } catch (error) {
@@ -55,3 +45,12 @@ export async function POST(req: Request) {
     return new NextResponse("Internal Error", { status: 500 });
   }
 }
+
+export const config = {
+  api: {
+    // disable nextjs's body parser while deployed
+    // (as body parsing is handled by `https.onRequest()`),
+    // but enable it for local development using `next dev`
+    bodyParser: process.env.NODE_ENV !== "production",
+  },
+};

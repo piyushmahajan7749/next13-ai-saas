@@ -25,7 +25,7 @@ const Behaviors: React.FC<{
     const isEdited =
       formData.qualifyingActivity.length > 1 && formData.behavior.length > 1;
     if (isEdited) {
-      const stmnt = `We're recruiting ${formData.demographics}, ${formData.agerange} in ${formData.location} who ${formData.behavior}, searching for ${formData.outcome} to help us test ${formData.solution}`;
+      const stmnt = `We're recruiting ${formData.demographics}, ${formData.agerange} in ${formData.location} who ${formData.qualifyingActivity}, searching for ${formData.outcome} to help us test ${formData.solution}`;
       setFormData((prevState: any) => ({ ...prevState, statement: stmnt }));
       setActiveStep(4);
     } else
